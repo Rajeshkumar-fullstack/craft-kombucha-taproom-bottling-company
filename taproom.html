@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taproom & On-Tap Cellar | Bramble & Oak Craft Kombucha</title>
+  <meta name="description" content="Experience 12 rotating craft kombucha taps, sensory flights, cellar tours, and live acoustic music at the Bramble & Oak Taproom in Portland, Oregon.">
+
+  <!-- Responsive Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#234E3D">
+
+  <!-- Zero-Flash Theme & RTL Initializer -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('zyma_theme_preference');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const dir = localStorage.getItem('zyma_direction_preference');
+      if (dir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts: Playfair Display (Headings) & Inter (Body, Nav & Buttons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'forest-green': '#234E3D',
+            'forest-green-hover': '#1B3F31',
+            'warm-orange': '#F4A261',
+            'warm-orange-hover': '#E7924F',
+            'dark-brown': '#3A3028',
+            'cream': '#FFF8ED',
+            brand: {
+              green: '#234E3D',
+              orange: '#F4A261',
+              brown: '#3A3028',
+              cream: '#FFF8ED',
+              dark: '#0F1613',
+              surface: '#17211C',
+            }
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-[#FDFBF7] dark:bg-[#0F1613] text-[#3A3028] dark:text-[#FFF8ED] transition-colors duration-300">
+
+  <!-- ==========================================================================
+       GLOBAL STICKY GLASSMORPHIC NAVBAR (BRAMBLE & OAK)
+       ========================================================================== -->
+  <header id="mainNavbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 border-b border-transparent">
+    <div class="container mx-auto px-2.5 sm:px-6 lg:px-8">
+      <div class="navbar-header-row flex items-center justify-between flex-nowrap w-full">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo flex items-center gap-2.5 sm:gap-3 group text-decoration-none shrink min-w-0" aria-label="Bramble & Oak Craft Kombucha">
+          <div class="brand-logo-icon shrink-0">
+            <i class="fa-solid fa-bottle-droplet text-base sm:text-lg"></i>
+          </div>
+          <div class="brand-logo-text flex flex-col justify-center min-w-0">
+            <span class="brand-logo-title">Bramble &amp; Oak</span>
+            <span class="brand-logo-subtitle">Craft Kombucha Co.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Inter, 14–16px, Medium/Semibold Weight) -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-[#3A3028] dark:text-[#FFF8ED]">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown-wrapper" id="homeDropdownWrapper">
+            <button id="homeDropdownBtn" class="nav-link-item flex items-center gap-1.5 hover:text-[#F4A261] dark:hover:text-[#F4A261] transition py-2 border-0 bg-transparent" aria-haspopup="true" aria-expanded="false">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down text-[10px] opacity-75 transition-transform duration-200"></i>
+            </button>
+            <div id="homeDropdownMenu" class="nav-dropdown-menu absolute top-full left-0 mt-2 w-64 p-2 rounded-2xl bg-[#FDFBF7] dark:bg-[#17211C] border border-[#3A3028]/10 dark:border-[#FFF8ED]/10 shadow-2xl z-50">
+              <a href="index.html" class="block px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none">
+                <span class="block font-bold">Our Story &amp; Experience</span>
+                <span class="text-[11px] text-[#3A3028]/70 dark:text-[#FFF8ED]/70 font-normal">General services &amp; brewery showcase</span>
+              </a>
+              <a href="home-niche.html" class="block px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none mt-1">
+                <span class="block font-bold">The Kombucha Collection</span>
+                <span class="text-[11px] text-[#3A3028]/70 dark:text-[#FFF8ED]/70 font-normal">Artisanal bottles &amp; reserve cellar</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">About</a>
+          <a href="products.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Products</a>
+          <a href="taproom.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none text-warm-orange active font-semibold">Taproom</a>
+          <a href="blog.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Blog</a>
+          <a href="contact.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Contact</a>
+        </nav>
+
+        <!-- Utilities (Single Line Responsive on All Screen Sizes) -->
+        <div class="navbar-utilities-group flex items-center gap-1 sm:gap-2 lg:gap-2.5 shrink-0">
+          <!-- Theme Toggle -->
+          <button class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 hover:bg-[#F4A261]/15 flex items-center justify-center transition shrink-0" title="Toggle Theme" aria-label="Toggle dark/light mode">
+            <i class="theme-toggle-icon fa-solid fa-sun text-[#F4A261] text-xs sm:text-sm"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle (Single Line Responsive across Mobile, Tablet & Desktop) -->
+          <button class="rtl-toggle-btn flex items-center justify-center h-8 sm:h-9 px-2 sm:px-2.5 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 hover:bg-[#F4A261]/15 text-xs font-bold text-[#3A3028] dark:text-[#FFF8ED] transition shrink-0" title="Toggle Direction (RTL / LTR)" aria-label="Toggle text direction">
+            <span class="rtl-toggle-text text-[11px] sm:text-xs font-bold">RTL</span>
+          </button>
+
+          <!-- Shopping Cart Trigger Button with Live Badge -->
+          <button data-cart-trigger class="btn-primary-forest relative px-2.5 sm:px-3.5 h-8 sm:h-9 rounded-lg sm:rounded-xl text-xs flex items-center gap-1.5 sm:gap-2 shadow-md shrink-0" aria-label="Open Cart">
+            <i class="fa-solid fa-bottle-droplet text-xs sm:text-sm text-[#F4A261]"></i>
+            <span class="hidden sm:inline">Reserve</span>
+            <span class="cart-badge-count absolute -top-1.5 -right-1.5 min-w-[18px] sm:min-w-[20px] h-[18px] sm:h-[20px] px-1 bg-[#F4A261] text-[#3A3028] text-[10px] sm:text-[11px] font-bold rounded-full flex items-center justify-center shadow">
+              0
+            </span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 flex items-center justify-center text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none shrink-0" aria-label="Open Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars text-xs sm:text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenuDropdown" class="lg:hidden hidden mt-3 p-4 rounded-2xl bg-[#FDFBF7]/98 dark:bg-[#17211C]/98 border border-[#3A3028]/10 dark:border-[#FFF8ED]/10 shadow-2xl backdrop-blur-xl space-y-2">
+        <!-- Expandable Home Submenu -->
+        <div>
+          <button id="mobileHomeSubToggle" class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 transition" aria-expanded="false">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-house text-xs text-[#F4A261]"></i> Home Experiences</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200"></i>
+          </button>
+          <div id="mobileHomeSubMenu" class="hidden pl-4 pr-1 py-1 space-y-1 mt-1 border-l-2 border-[#F4A261]/40 ml-3">
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none">
+              Our Story &amp; Experience
+            </a>
+            <a href="home-niche.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none">
+              The Kombucha Collection
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          About
+        </a>
+        <a href="products.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Products
+        </a>
+        <a href="taproom.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold bg-[#F4A261]/15 text-[#F4A261] text-decoration-none">
+          Taproom
+        </a>
+        <a href="blog.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Blog
+        </a>
+        <a href="contact.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Contact
+        </a>
+
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO: TAPROOM CELLAR AMBIANCE
+       ========================================================================== -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Hero Background Image & Atmospheric Overlays -->
+    <div class="hero-bg-layer" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&q=80&w=2000" 
+           alt="Rustic Timber and Warm Light Craft Kombucha Taproom" 
+           class="hero-bg-img hero-parallax-bg" 
+           data-parallax-speed="0.16"
+           loading="eager" 
+           fetchpriority="high">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-gradient-bottom"></div>
+    </div>
+
+    <div class="ambient-glow-amber top-12 left-10"></div>
+    <div class="ambient-glow-green bottom-10 right-10"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 section-eyebrow hero-eyebrow-enter px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-forest-green dark:text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0"></span>
+            <span>Taproom Open Today<span class="hidden sm:inline"> • 12:00 PM – 11:00 PM</span></span>
+          </div>
+
+          <h1 class="text-h1 hero-title-enter font-heading font-bold tracking-tight text-[#3A3028] dark:text-[#FFF8ED] leading-[1.1]">
+            Where Live Culture <br>
+            <span class="editorial-italic font-normal text-warm-orange">
+              Meets The Glass.
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-stone-800 dark:text-stone-200 max-w-xl font-normal leading-relaxed hero-lead-enter">
+            12 rotating cold draft taps, sensory flights poured in stemmed glassware, wild fermentation workshops, and freshly capped growler refills in Portland's historic industrial district.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 hero-cta-enter">
+            <a href="#onTapSection" class="btn-primary-forest px-7 py-3.5 rounded-2xl font-semibold text-sm shadow-xl transition transform hover:-translate-y-0.5 text-decoration-none flex items-center gap-2">
+              <i class="fa-solid fa-beer-mug-empty"></i>
+              <span>View Live Tap Board</span>
+            </a>
+            <a href="#reservationForm" class="btn-secondary-orange px-7 py-3.5 rounded-2xl font-semibold text-sm transition transform hover:-translate-y-0.5 text-decoration-none flex items-center gap-2">
+              <span>Reserve A Table</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="pt-2 flex items-center gap-6 text-xs text-stone-700 dark:text-stone-300 font-medium hero-trust-enter">
+            <span><i class="fa-solid fa-dog text-warm-orange me-1"></i> Dog-Friendly Patio</span>
+            <span><i class="fa-solid fa-guitar text-warm-orange me-1"></i> Friday Acoustic Live</span>
+            <span><i class="fa-solid fa-wine-glass text-warm-orange me-1"></i> Growlers To-Go</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 hero-card-enter">
+          <div class="relative rounded-3xl overflow-hidden border border-white/20 dark:border-slate-700/60 shadow-2xl p-2 bg-white/40 dark:bg-slate-800/40 img-zoom-container">
+            <img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?auto=format&fit=crop&q=80&w=1200" 
+                 alt="Bramble & Oak Taproom Tasting Flights and Pours" 
+                 loading="eager"
+                 fetchpriority="high"
+                 class="w-full h-[380px] sm:h-[440px] object-cover rounded-2xl hover-scale hero-parallax-img"
+                 data-parallax-speed="0.08">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       "ON TAP RIGHT NOW" DIGITAL BOARD
+       ========================================================================== -->
+  <section id="onTapSection" class="py-24 bg-[#F5EEDB]/40 dark:bg-[#15211B]/60">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 section-eyebrow text-forest-green dark:text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Digital Board Synced Live With Cellar Manifold</span>
+        </div>
+        <h2 class="text-h2 font-heading font-bold text-[#3A3028] dark:text-[#FFF8ED]">
+          What's Pouring <span class="editorial-italic font-normal text-warm-orange">On Tap</span>
+        </h2>
+        <p class="text-[#3A3028]/80 dark:text-[#FFF8ED]/80 text-sm leading-relaxed">
+          Poured at 38°F from cold cellar kegs. Available by the 8oz snifter, 16oz pint, 4-pour tasting paddle, or 64oz refillable growler.
+        </p>
+      </div>
+
+      <!-- 8-Tap Digital Board Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="digitalTapBoard">
+        
+        <!-- Tap 1 -->
+        <div class="glass-card p-6 flex flex-col justify-between hover-lift" data-aos="fade-up">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-amber-500 text-white font-mono font-bold flex items-center justify-center text-sm shadow">
+                  #1
+                </span>
+                <div>
+                  <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white m-0">Yuzu Ginger Zing</h3>
+                  <span class="text-[11px] text-amber-600 dark:text-amber-400 font-semibold">Flagship Draft • Sencha Tea Base</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                0.4% ABV
+              </span>
+            </div>
+            
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              Cold-pressed Peruvian ginger with electric Japanese yuzu citrus. Refreshing and warming.
+            </p>
+
+            <!-- Sensory meters -->
+            <div class="grid grid-cols-3 gap-3 pt-3 text-[11px] text-slate-500 dark:text-slate-400">
+              <div>
+                <span class="block font-semibold">Tartness: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-amber-500 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sweetness: 2/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-emerald-500 rounded-full" style="width: 40%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sparkle: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-sky-400 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium"><i class="fa-solid fa-beer-mug-empty text-amber-500 me-1"></i> Keg Level: <strong class="text-slate-800 dark:text-slate-200">82% Full</strong></span>
+            <span class="font-bold text-slate-900 dark:text-white">$6 Pint • $18 Growler</span>
+          </div>
+        </div>
+
+        <!-- Tap 2 -->
+        <div class="glass-card p-6 flex flex-col justify-between hover-lift" data-aos="fade-up" data-aos-delay="50">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-rose-500 text-white font-mono font-bold flex items-center justify-center text-sm shadow">
+                  #2
+                </span>
+                <div>
+                  <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white m-0">Hibiscus Rose Hip</h3>
+                  <span class="text-[11px] text-rose-500 font-semibold">Botanical Ruby Pour • Wild Elderberry</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                0.3% ABV
+              </span>
+            </div>
+            
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              Egyptian hibiscus steeped with crushed rose hips and tart Oregon cranberries.
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 pt-3 text-[11px] text-slate-500 dark:text-slate-400">
+              <div>
+                <span class="block font-semibold">Tartness: 5/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-rose-500 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sweetness: 3/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-emerald-500 rounded-full" style="width: 60%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sparkle: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-sky-400 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium"><i class="fa-solid fa-beer-mug-empty text-rose-500 me-1"></i> Keg Level: <strong class="text-slate-800 dark:text-slate-200">65% Full</strong></span>
+            <span class="font-bold text-slate-900 dark:text-white">$6 Pint • $18 Growler</span>
+          </div>
+        </div>
+
+        <!-- Tap 3 -->
+        <div class="glass-card p-6 flex flex-col justify-between hover-lift" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-orange-600 text-white font-mono font-bold flex items-center justify-center text-sm shadow">
+                  #3
+                </span>
+                <div>
+                  <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white m-0">Blood Orange Bergamot</h3>
+                  <span class="text-[11px] text-orange-600 dark:text-orange-400 font-semibold">21-Day Oak • Sun-Drenched Moro Citrus</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                0.3% ABV
+              </span>
+            </div>
+            
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              Fresh-pressed Sicilian Moro blood orange combined with cold-pressed Calabrian bergamot peel and crushed cardamom.
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 pt-3 text-[11px] text-slate-500 dark:text-slate-400">
+              <div>
+                <span class="block font-semibold">Tartness: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-orange-500 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sweetness: 3/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-emerald-500 rounded-full" style="width: 60%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sparkle: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-sky-400 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium"><i class="fa-solid fa-beer-mug-empty text-orange-600 me-1"></i> Keg Level: <strong class="text-slate-800 dark:text-slate-200">90% (Fresh Tap)</strong></span>
+            <span class="font-bold text-slate-900 dark:text-white">$6.50 Pint • $19 Growler</span>
+          </div>
+        </div>
+
+        <!-- Tap 4 -->
+        <div class="glass-card p-6 flex flex-col justify-between hover-lift" data-aos="fade-up" data-aos-delay="150">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-purple-900 text-white font-mono font-bold flex items-center justify-center text-sm shadow">
+                  #4
+                </span>
+                <div>
+                  <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white m-0">Wild Blackberry Bramble</h3>
+                  <span class="text-[11px] text-purple-600 dark:text-purple-400 font-semibold">24-Day French Oak • Pacific Northwest Berry</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                0.4% ABV
+              </span>
+            </div>
+            
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+              Hand-harvested Oregon wild blackberries combined with whole elderberries and Darjeeling tea aged in neutral French oak.
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 pt-3 text-[11px] text-slate-500 dark:text-slate-400">
+              <div>
+                <span class="block font-semibold">Tartness: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-purple-700 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sweetness: 3/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-emerald-500 rounded-full" style="width: 60%"></div>
+                </div>
+              </div>
+              <div>
+                <span class="block font-semibold">Sparkle: 4/5</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-1">
+                  <div class="h-1.5 bg-sky-400 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium"><i class="fa-solid fa-beer-mug-empty text-purple-600 me-1"></i> Keg Level: <strong class="text-slate-800 dark:text-slate-200">85% (Active Tap)</strong></span>
+            <span class="font-bold text-slate-900 dark:text-white">$6.50 Pint • $19 Growler</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE TABLE RESERVATION FORM
+       ========================================================================== -->
+  <section id="reservationForm" class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      
+      <div class="glass-card p-8 sm:p-12 shadow-2xl relative" data-aos="fade-up">
+        <div class="max-w-xl mb-8">
+          <span class="section-eyebrow text-warm-orange">
+            Taproom Seating
+          </span>
+          <h2 class="text-h2 font-heading font-bold text-[#3A3028] dark:text-[#FFF8ED] mt-1">
+            Reserve A Tasting <span class="editorial-italic font-normal text-warm-orange">Table</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-[#3A3028]/80 dark:text-[#FFF8ED]/80 mt-2 leading-relaxed">
+            Walk-ins are always welcomed at the copper bar. For groups of 4 or more, flight paddles, or cellar barrel seating, please book below.
+          </p>
+        </div>
+
+        <!-- Reservation Success Alert Container -->
+        <div id="taproomSuccessAlert" class="form-success-banner mb-6 hidden animate-fade" role="alert">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="font-heading font-bold text-base m-0 text-emerald-900 dark:text-emerald-200">Table Reservation Confirmed!</h4>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#F4A261] text-[#3A3028]" id="taproomRefBadge">#BO-RES-1024</span>
+              </div>
+              <p class="text-xs m-0 leading-relaxed text-emerald-800 dark:text-emerald-300" id="taproomSuccessMsg">
+                Thank you! Your table has been reserved. A confirmation calendar invite and tasting notes have been dispatched to your inbox.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form id="taproomBookingForm" class="space-y-4" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="taproomGuestName" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Guest Name <span class="text-warm-orange">*</span>
+              </label>
+              <input type="text" id="taproomGuestName" name="guestName" placeholder="Samantha Cole" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+              <span id="guestNameError" class="form-error-msg hidden">Guest name must contain only letters (no digits allowed).</span>
+            </div>
+            <div>
+              <label for="taproomGuestPhone" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Contact Phone Number <span class="text-warm-orange">*</span>
+              </label>
+              <input type="tel" id="taproomGuestPhone" name="phone" placeholder="5035550192" maxlength="15" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+              <span id="guestPhoneError" class="form-error-msg hidden">Contact number must contain only digits (no letters allowed, min 10 digits).</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="taproomGuestEmail" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Email Address <span class="text-warm-orange">*</span>
+              </label>
+              <input type="email" id="taproomGuestEmail" name="email" placeholder="samantha@example.com" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+              <span id="guestEmailError" class="form-error-msg hidden">Please enter a valid email address (e.g. name@example.com).</span>
+            </div>
+            <div>
+              <label for="taproomDate" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Reservation Date <span class="text-warm-orange">*</span>
+              </label>
+              <input type="date" id="taproomDate" name="date" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+              <span id="guestDateError" class="form-error-msg hidden">Please select a valid date (today or future).</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label for="taproomTime" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Seating Time <span class="text-warm-orange">*</span>
+              </label>
+              <select id="taproomTime" name="time" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+                <option value="1:00 PM">1:00 PM (Afternoon Flight)</option>
+                <option value="3:30 PM">3:30 PM (Patio Sun)</option>
+                <option value="5:30 PM">5:30 PM (Golden Hour)</option>
+                <option value="7:00 PM" selected>7:00 PM (Acoustic Music)</option>
+                <option value="8:30 PM">8:30 PM (Late Cellar)</option>
+              </select>
+            </div>
+            <div>
+              <label for="taproomPartySize" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Party Size <span class="text-warm-orange">*</span>
+              </label>
+              <select id="taproomPartySize" name="partySize" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+                <option value="2 Guests">2 Guests (Flight Duo)</option>
+                <option value="4 Guests" selected>4 Guests (Flight Paddle)</option>
+                <option value="6 Guests">6 Guests (Community Table)</option>
+                <option value="8+ Guests">8+ Guests (Cellar Lounge)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="taproomSeatingPref" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Seating Preference <span class="text-warm-orange">*</span>
+              </label>
+              <select id="taproomSeatingPref" name="seatingPref" 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+                <option value="Main Cedar Hall & Copper Bar">Main Cedar Hall &amp; Copper Bar</option>
+                <option value="Dog-Friendly Heated Garden Patio">Dog-Friendly Heated Garden Patio</option>
+                <option value="Oak Barrel Cellar Viewing Room">Oak Barrel Cellar Viewing Room</option>
+              </select>
+            </div>
+            <div>
+              <label for="taproomNotes" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
+                Special Notes <span class="text-stone-400 font-normal">(Optional)</span>
+              </label>
+              <input type="text" id="taproomNotes" name="notes" placeholder="Celebrating birthday, sensory flight preview, etc." 
+                class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
+            </div>
+          </div>
+
+          <button type="submit" id="taproomSubmitBtn" class="btn-primary-forest w-full py-4 rounded-xl font-semibold text-sm shadow-xl transition transform hover:-translate-y-0.5">
+            Confirm Taproom Table Reservation
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TOURS & MASTERCLASSES
+       ========================================================================== -->
+  <section class="py-24 bg-[#F5EEDB]/40 dark:bg-[#15211B]/60">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
+        <span class="section-eyebrow text-forest-green dark:text-emerald-400">
+          Workshops & Cellar Access
+        </span>
+        <h2 class="text-h2 font-heading font-bold text-[#3A3028] dark:text-[#FFF8ED]">
+          Hands-On Fermentation <span class="editorial-italic font-normal text-warm-orange">Experiences</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <div class="glass-card p-8 space-y-4 hover-lift" data-aos="fade-up">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-warm-orange">Every Saturday • 11:00 AM</span>
+              <h3 class="font-heading font-bold text-xl text-[#3A3028] dark:text-[#FFF8ED]">Home Fermentation Workshop</h3>
+            </div>
+            <span class="text-2xl font-heading font-bold text-warm-orange">$45</span>
+          </div>
+          <p class="text-xs text-[#3A3028]/80 dark:text-[#FFF8ED]/80 leading-relaxed">
+            Led by Chief Microbiologist Dr. Aris Thorne. Learn pH measurement, tea selection, sugar digestion dynamics, and take home your own live Heirloom SCOBY mother culture and a 1-gallon glass fermentation jar.
+          </p>
+          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-forest-green dark:text-emerald-400 font-semibold"><i class="fa-solid fa-box-open me-1"></i> SCOBY Kit Included</span>
+            <button onclick="bookExperience('Home Fermentation Workshop')" class="btn-secondary-orange px-4 py-2 rounded-xl text-xs font-semibold shadow transition">
+              Book Spot
+            </button>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-warm-orange">Every Sunday • 2:00 PM</span>
+              <h3 class="font-heading font-bold text-xl text-[#3A3028] dark:text-[#FFF8ED]">Master Brewer Oak Tour & Tasting</h3>
+            </div>
+            <span class="text-2xl font-heading font-bold text-warm-orange">$30</span>
+          </div>
+          <p class="text-xs text-[#3A3028]/80 dark:text-[#FFF8ED]/80 leading-relaxed">
+            Walk behind the scenes into our climate-controlled oak cask aging room. Sample 4 unreleased barrel vintages straight from the bung hole, paired with artisanal vegan cheeses.
+          </p>
+          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-forest-green dark:text-emerald-400 font-semibold"><i class="fa-solid fa-wine-glass me-1"></i> 4-Pour Cellar Flight</span>
+            <button onclick="bookExperience('Master Brewer Oak Tour')" class="btn-secondary-orange px-4 py-2 rounded-xl text-xs font-semibold shadow transition">
+              Book Spot
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL COMPREHENSIVE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer pt-16 pb-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b footer-divider">
+        
+        <!-- Column 1 — Brand (4 cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble & Oak Craft Kombucha">
+            <div class="brand-logo-icon">
+              <i class="fa-solid fa-bottle-droplet text-lg"></i>
+            </div>
+            <div class="brand-logo-text flex flex-col justify-center">
+              <span class="brand-logo-title">Bramble &amp; Oak</span>
+              <span class="brand-logo-subtitle">Craft Kombucha Co.</span>
+            </div>
+          </a>
+          <p class="text-xs footer-desc max-w-sm m-0">
+            Dedicated to the unhurried craft of raw, living probiotic beverages. Fermented in neutral oak casks with whole botanicals, cold spring water, and wild cultures in Portland, Oregon.
+          </p>
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-2.5 pt-1">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 — Explore Bramble & Oak (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Explore Bramble &amp; Oak</h4>
+          <ul class="space-y-2 text-xs p-0 m-0 list-none">
+            <li><a href="index.html" class="footer-link">Our Story &amp; Experience</a></li>
+            <li><a href="home-niche.html" class="footer-link">The Kombucha Collection</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="taproom.html" class="footer-link">Taproom</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 — Discover Our Craft (3 cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Discover Our Craft</h4>
+          <ul class="space-y-2 text-xs p-0 m-0 list-none">
+            <li><a href="products.html?category=citrus-zest" class="footer-link">Citrus &amp; Zest</a></li>
+            <li><a href="products.html?category=berry-blends" class="footer-link">Berry Blends</a></li>
+            <li><a href="products.html?category=tropical-fruits" class="footer-link">Tropical Fruits</a></li>
+            <li><a href="products.html?category=botanical-herbal" class="footer-link">Botanical &amp; Herbal</a></li>
+            <li><a href="products.html?category=ginger-spice" class="footer-link">Ginger &amp; Spice</a></li>
+            <li><a href="products.html?category=seasonal-specials" class="footer-link">Seasonal Specials</a></li>
+          </ul>
+          <div class="pt-2.5 border-t border-stone-200/50 dark:border-stone-800/50 text-[11px] footer-desc space-y-0.5">
+            <p class="m-0 font-semibold text-[#234E3D] dark:text-[#F4A261] flex items-center gap-1.5">
+              <i class="fa-regular fa-clock text-[10px]"></i>
+              <span>Taproom Hours</span>
+            </p>
+            <p class="m-0">Wed–Fri: 3PM–10PM</p>
+            <p class="m-0">Sat–Sun: 12PM–11PM</p>
+          </div>
+        </div>
+
+        <!-- Column 4 — Fermentation Circle (Newsletter) (3 cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Fermentation Circle</h4>
+          <p class="text-xs footer-desc leading-relaxed m-0">
+            Join 12,000+ living culture enthusiasts. Get early access to small-batch barrel drops and 15% off your first cold-pack order.
+          </p>
+
+          <form class="newsletter-form space-y-2 pt-1">
+            <div class="flex gap-2">
+              <input type="email" placeholder="Your email address" required 
+                class="footer-input flex-1 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
+              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0">
+                Join
+              </button>
+            </div>
+            <span class="block text-[11px] footer-desc">Cold-chain delivered to your door. No spam ever.</span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs footer-copyright">
+        <div class="text-center sm:text-left">
+          &copy; <span class="current-year">2026</span> Bramble &amp; Oak Craft Kombucha Taproom &amp; Bottling Co. All rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center justify-center sm:justify-end gap-5">
+          <a href="about.html" class="footer-link">Terms of Fermentation</a>
+          <a href="products.html" class="footer-link">Cold-Chain Guarantee</a>
+          <a href="contact.html" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function bookExperience(name) {
+      const cart = window.brambleCart || window.zymaCart;
+      if (cart) {
+        cart.showToast(`Selected "${name}". Please choose your date in the reservation calendar below!`, 'success');
+      }
+      document.getElementById('reservationForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('taproomBookingForm');
+      if (!form) return;
+
+      const nameInput = document.getElementById('taproomGuestName');
+      const phoneInput = document.getElementById('taproomGuestPhone');
+      const emailInput = document.getElementById('taproomGuestEmail');
+      const dateInput = document.getElementById('taproomDate');
+      const timeInput = document.getElementById('taproomTime');
+      const partyInput = document.getElementById('taproomPartySize');
+      const seatingInput = document.getElementById('taproomSeatingPref');
+      const notesInput = document.getElementById('taproomNotes');
+      const submitBtn = document.getElementById('taproomSubmitBtn');
+      const successAlert = document.getElementById('taproomSuccessAlert');
+      const refBadge = document.getElementById('taproomRefBadge');
+      const successMsg = document.getElementById('taproomSuccessMsg');
+
+      const nameError = document.getElementById('guestNameError');
+      const phoneError = document.getElementById('guestPhoneError');
+      const emailError = document.getElementById('guestEmailError');
+      const dateError = document.getElementById('guestDateError');
+
+      // Typing Filters: Proactively block illegal characters
+      // Guest Name: letters only, NO digits
+      if (nameInput) {
+        nameInput.addEventListener('input', () => {
+          nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+        });
+      }
+
+      // Contact Phone: digits only, NO letters
+      if (phoneInput) {
+        phoneInput.addEventListener('input', () => {
+          phoneInput.value = phoneInput.value.replace(/[^0-9+\-()\s]/g, '');
+        });
+      }
+
+      // Set min date to today
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        dateInput.min = todayStr;
+        if (!dateInput.value) {
+          dateInput.value = todayStr;
+        }
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+      function clearFieldError(input, errEl) {
+        if (!input) return;
+        input.classList.remove('form-input-error');
+        if (input.value.trim().length > 0) {
+          input.classList.add('form-input-valid');
+        } else {
+          input.classList.remove('form-input-valid');
+        }
+        if (errEl) errEl.classList.add('hidden');
+      }
+
+      function setFieldError(input, errEl) {
+        if (!input) return;
+        input.classList.remove('form-input-valid');
+        input.classList.add('form-input-error');
+        if (errEl) errEl.classList.remove('hidden');
+      }
+
+      // Live inputs
+      if (nameInput) {
+        const isNameValid = (v) => /^[A-Za-z\s.'-]{2,}$/.test(v.trim()) && !/\d/.test(v);
+        nameInput.addEventListener('input', () => {
+          if (isNameValid(nameInput.value)) clearFieldError(nameInput, nameError);
+        });
+        nameInput.addEventListener('blur', () => {
+          if (!isNameValid(nameInput.value)) setFieldError(nameInput, nameError);
+          else clearFieldError(nameInput, nameError);
+        });
+      }
+
+      if (phoneInput) {
+        const isPhoneValid = (v) => v.replace(/\D/g, '').length >= 10 && !/[a-zA-Z]/.test(v);
+        phoneInput.addEventListener('input', () => {
+          if (isPhoneValid(phoneInput.value)) clearFieldError(phoneInput, phoneError);
+        });
+        phoneInput.addEventListener('blur', () => {
+          if (!isPhoneValid(phoneInput.value)) setFieldError(phoneInput, phoneError);
+          else clearFieldError(phoneInput, phoneError);
+        });
+      }
+
+      if (emailInput) {
+        emailInput.addEventListener('input', () => {
+          if (emailRegex.test(emailInput.value.trim())) {
+            clearFieldError(emailInput, emailError);
+          }
+        });
+        emailInput.addEventListener('blur', () => {
+          if (!emailRegex.test(emailInput.value.trim())) {
+            setFieldError(emailInput, emailError);
+          } else {
+            clearFieldError(emailInput, emailError);
+          }
+        });
+      }
+
+      if (dateInput) {
+        dateInput.addEventListener('change', () => {
+          if (dateInput.value && dateInput.value >= todayStr) {
+            clearFieldError(dateInput, dateError);
+          } else {
+            setFieldError(dateInput, dateError);
+          }
+        });
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        let firstInvalid = null;
+
+        // Validate Guest Name (letters only, NO digits)
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        if (!nameVal || !/^[A-Za-z\s.'-]{2,}$/.test(nameVal) || /\d/.test(nameVal)) {
+          setFieldError(nameInput, nameError);
+          isValid = false;
+          if (!firstInvalid) firstInvalid = nameInput;
+        } else {
+          clearFieldError(nameInput, nameError);
+        }
+
+        // Validate Contact Phone (digits only, NO letters)
+        const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        if (!phoneVal || phoneVal.replace(/\D/g, '').length < 10 || /[a-zA-Z]/.test(phoneVal)) {
+          setFieldError(phoneInput, phoneError);
+          isValid = false;
+          if (!firstInvalid) firstInvalid = phoneInput;
+        } else {
+          clearFieldError(phoneInput, phoneError);
+        }
+
+        // Validate Email
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+          setFieldError(emailInput, emailError);
+          isValid = false;
+          if (!firstInvalid) firstInvalid = emailInput;
+        } else {
+          clearFieldError(emailInput, emailError);
+        }
+
+        // Validate Date
+        if (!dateInput.value || dateInput.value < todayStr) {
+          setFieldError(dateInput, dateError);
+          isValid = false;
+          if (!firstInvalid) firstInvalid = dateInput;
+        } else {
+          clearFieldError(dateInput, dateError);
+        }
+
+        if (!isValid) {
+          if (firstInvalid) {
+            firstInvalid.focus();
+            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          const cart = window.brambleCart || window.zymaCart;
+          if (cart && typeof cart.showToast === 'function') {
+            cart.showToast('Please correct the highlighted fields before submitting.', 'warning');
+          }
+          return;
+        }
+
+        // Processing state
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Securing Reservation...';
+
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+
+          const refNum = 'BO-RES-' + Math.floor(1000 + Math.random() * 9000);
+          if (refBadge) refBadge.textContent = '#' + refNum;
+
+          if (successMsg) {
+            successMsg.textContent = `Thank you, ${nameInput.value.trim()}! Your table for ${partyInput ? partyInput.value : 'your party'} is confirmed for ${dateInput.value} at ${timeInput ? timeInput.value : '7:00 PM'} (${seatingInput ? seatingInput.value : 'Main Hall'}). A calendar invite and cellar tasting itinerary have been sent to ${emailInput.value.trim()}.`;
+          }
+
+          if (successAlert) {
+            successAlert.classList.remove('hidden');
+            successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+
+          const cart = window.brambleCart || window.zymaCart;
+          if (cart && typeof cart.showToast === 'function') {
+            cart.showToast(`Table Reserved! Reference #${refNum}. Confirmation email dispatched.`, 'success');
+          }
+
+          form.reset();
+          [nameInput, phoneInput, emailInput, dateInput].forEach(inp => {
+            if (inp) {
+              inp.classList.remove('form-input-error', 'form-input-valid');
+            }
+          });
+          if (dateInput) {
+            dateInput.value = todayStr;
+          }
+        }, 600);
+      });
+    });
+  </script>
+</body>
+</html>

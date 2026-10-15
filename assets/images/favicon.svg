@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D634E"/>
+      <stop offset="100%" stop-color="#14241E"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD5B5"/>
+      <stop offset="35%" stop-color="#F4A261"/>
+      <stop offset="100%" stop-color="#E7924F"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Luxury Forest Green Squircle Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#bgGrad)" stroke="#F4A261" stroke-width="2.5" stroke-opacity="0.6"/>
+
+  <!-- Living Craft Kombucha Bottle & Probiotic Droplet -->
+  <g filter="url(#softGlow)">
+    <!-- Bottle Cap -->
+    <rect x="27.5" y="11" width="9" height="3.5" rx="1.5" fill="url(#goldGrad)"/>
+    
+    <!-- Bottle Body & Neck -->
+    <path d="M29 14.5H35V19.5C35 22.8 39.5 25.5 40 28.5V43C40 47.4 36.4 51 32 51C27.6 51 24 47.4 24 43V28.5C24.5 25.5 29 22.8 29 19.5V14.5Z" fill="url(#goldGrad)"/>
+    
+    <!-- Living Culture Probiotic Droplet Inside Bottle -->
+    <path d="M32 29C30.2 32 28 34.5 28 37C28 39.2 29.8 41 32 41C34.2 41 36 39.2 36 37C36 34.5 33.8 32 32 29Z" fill="#1B3F31"/>
+    
+    <!-- Micro Sparkling Effervescence Bubbles -->
+    <circle cx="32" cy="37" r="1.5" fill="#F4A261"/>
+    <circle cx="30" cy="45" r="1.2" fill="#1B3F31" opacity="0.7"/>
+    <circle cx="34" cy="46" r="1" fill="#1B3F31" opacity="0.7"/>
+  </g>
+</svg>

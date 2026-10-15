@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Experience | Bramble & Oak Craft Kombucha Taproom & Bottling Co.</title>
+  <meta name="description" content="Artisanal oak-aged raw kombucha brewed with high-mountain botanicals, living probiotic cultures, and zero artificial sweeteners. Visit our taproom or order fresh cold-chain cans.">
+
+  <!-- Responsive Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#234E3D">
+
+  <!-- Zero-Flash Theme & RTL Initializer -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('bramble_theme_preference') || localStorage.getItem('zyma_theme_preference');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const dir = localStorage.getItem('bramble_direction_preference') || localStorage.getItem('zyma_direction_preference');
+      if (dir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts: Playfair Display (Headings) & Inter (Body, Nav & Buttons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'forest-green': '#234E3D',
+            'forest-green-hover': '#1B3F31',
+            'forest-green-light': '#2D634E',
+            'warm-orange': '#F4A261',
+            'warm-orange-hover': '#E7924F',
+            'dark-brown': '#3A3028',
+            'cream': '#FFF8ED',
+            brand: {
+              green: '#234E3D',
+              orange: '#F4A261',
+              brown: '#3A3028',
+              cream: '#FFF8ED',
+              dark: '#0F1613',
+              surface: '#17211C',
+            }
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-[#FDFBF7] dark:bg-[#0F1613] text-[#3A3028] dark:text-[#FFF8ED] transition-colors duration-300">
+
+  <!-- ==========================================================================
+       GLOBAL STICKY GLASSMORPHIC NAVBAR (BRAMBLE & OAK)
+       ========================================================================== -->
+  <header id="mainNavbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 border-b border-transparent">
+    <div class="container mx-auto px-2.5 sm:px-6 lg:px-8">
+      <div class="navbar-header-row flex items-center justify-between flex-nowrap w-full">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo flex items-center gap-2.5 sm:gap-3 group text-decoration-none shrink min-w-0" aria-label="Bramble & Oak Craft Kombucha">
+          <div class="brand-logo-icon shrink-0">
+            <i class="fa-solid fa-bottle-droplet text-base sm:text-lg"></i>
+          </div>
+          <div class="brand-logo-text flex flex-col justify-center min-w-0">
+            <span class="brand-logo-title">Bramble &amp; Oak</span>
+            <span class="brand-logo-subtitle">Craft Kombucha Co.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Inter, 14–16px, Medium/Semibold Weight) -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-[#3A3028] dark:text-[#FFF8ED]">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown-wrapper" id="homeDropdownWrapper">
+            <button id="homeDropdownBtn" class="nav-link-item flex items-center gap-1.5 hover:text-[#F4A261] dark:hover:text-[#F4A261] transition py-2 text-warm-orange active font-semibold border-0 bg-transparent" aria-haspopup="true" aria-expanded="false">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down text-[10px] opacity-75 transition-transform duration-200"></i>
+            </button>
+            <div id="homeDropdownMenu" class="nav-dropdown-menu absolute top-full left-0 mt-2 w-64 p-2 rounded-2xl bg-[#FDFBF7] dark:bg-[#17211C] border border-[#3A3028]/10 dark:border-[#FFF8ED]/10 shadow-2xl z-50">
+              <a href="index.html" class="block px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] bg-[#F4A261]/15 text-[#F4A261] transition text-decoration-none">
+                <span class="block font-bold">Our Story &amp; Experience</span>
+                <span class="text-[11px] text-[#3A3028]/70 dark:text-[#FFF8ED]/70 font-normal">General services &amp; brewery showcase</span>
+              </a>
+              <a href="home-niche.html" class="block px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none mt-1">
+                <span class="block font-bold">The Kombucha Collection</span>
+                <span class="text-[11px] text-[#3A3028]/70 dark:text-[#FFF8ED]/70 font-normal">Artisanal bottles &amp; reserve cellar</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">About</a>
+          <a href="products.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Products</a>
+          <a href="taproom.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Taproom</a>
+          <a href="blog.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Blog</a>
+          <a href="contact.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Contact</a>
+        </nav>
+
+        <!-- Utilities (Single Line Responsive on All Screen Sizes) -->
+        <div class="navbar-utilities-group flex items-center gap-1 sm:gap-2 lg:gap-2.5 shrink-0">
+          <!-- Theme Toggle -->
+          <button class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 hover:bg-[#F4A261]/15 flex items-center justify-center transition shrink-0" title="Toggle Theme" aria-label="Toggle dark/light mode">
+            <i class="theme-toggle-icon fa-solid fa-sun text-[#F4A261] text-xs sm:text-sm"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle (Single Line Responsive across Mobile, Tablet & Desktop) -->
+          <button class="rtl-toggle-btn flex items-center justify-center h-8 sm:h-9 px-2 sm:px-2.5 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 hover:bg-[#F4A261]/15 text-xs font-bold text-[#3A3028] dark:text-[#FFF8ED] transition shrink-0" title="Toggle Direction (RTL / LTR)" aria-label="Toggle text direction">
+            <span class="rtl-toggle-text text-[11px] sm:text-xs font-bold">RTL</span>
+          </button>
+
+          <!-- Shopping Cart Trigger Button with Live Badge -->
+          <button data-cart-trigger class="btn-primary-forest relative px-2.5 sm:px-3.5 h-8 sm:h-9 rounded-lg sm:rounded-xl text-xs flex items-center gap-1.5 sm:gap-2 shadow-md shrink-0" aria-label="Open Cart">
+            <i class="fa-solid fa-bottle-droplet text-xs sm:text-sm text-[#F4A261]"></i>
+            <span class="hidden sm:inline">Reserve</span>
+            <span class="cart-badge-count absolute -top-1.5 -right-1.5 min-w-[18px] sm:min-w-[20px] h-[18px] sm:h-[20px] px-1 bg-[#F4A261] text-[#3A3028] text-[10px] sm:text-[11px] font-bold rounded-full flex items-center justify-center shadow">
+              0
+            </span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 flex items-center justify-center text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none shrink-0" aria-label="Open Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars text-xs sm:text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenuDropdown" class="lg:hidden hidden mt-3 p-4 rounded-2xl bg-[#FDFBF7]/98 dark:bg-[#17211C]/98 border border-[#3A3028]/10 dark:border-[#FFF8ED]/10 shadow-2xl backdrop-blur-xl space-y-2">
+        <!-- Expandable Home Submenu -->
+        <div>
+          <button id="mobileHomeSubToggle" class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 transition" aria-expanded="false">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-house text-xs text-[#F4A261]"></i> Home Experiences</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200"></i>
+          </button>
+          <div id="mobileHomeSubMenu" class="hidden pl-4 pr-1 py-1 space-y-1 mt-1 border-l-2 border-[#F4A261]/40 ml-3">
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-[#F4A261] bg-[#F4A261]/15 text-decoration-none">
+              Our Story & Experience
+            </a>
+            <a href="home-niche.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none">
+              The Kombucha Collection
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          About
+        </a>
+        <a href="products.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Products
+        </a>
+        <a href="taproom.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Taproom
+        </a>
+        <a href="blog.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Blog
+        </a>
+        <a href="contact.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">
+          Contact
+        </a>
+
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION: MASTER BRAND SHOWCASE
+       H1: 56–72px desktop, 36–44px mobile, tight line height
+       Rich typography, selective italic emphasis, warm orange highlights
+       ========================================================================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+    <!-- Hero Background Image & Atmospheric Overlays -->
+    <div class="hero-bg-layer" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&q=80&w=2000" 
+           alt="Artisanal Oak Barrel Kombucha Fermentation Cellar" 
+           class="hero-bg-img hero-parallax-bg" 
+           data-parallax-speed="0.18"
+           loading="eager" 
+           fetchpriority="high">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-gradient-bottom"></div>
+    </div>
+
+    <!-- Ambient Auras -->
+    <div class="ambient-glow-amber top-12 -left-20"></div>
+    <div class="ambient-glow-green bottom-10 right-0"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & CTAs with Cinematic Staggered Entrance -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Quality Pill Badges with Balanced Letter Spacing -->
+          <div class="section-eyebrow hero-eyebrow-enter">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-500 animate-ping shrink-0"></span>
+            <span class="whitespace-nowrap">100% Raw &amp; Living Culture</span>
+            <span class="hidden sm:inline text-stone-500 dark:text-stone-400">•</span>
+            <span class="hidden sm:inline whitespace-nowrap">Oak Barrel Aged 21 Days</span>
+            <span class="hidden md:inline text-stone-500 dark:text-stone-400">•</span>
+            <span class="hidden md:inline whitespace-nowrap">&lt;0.5% ABV</span>
+          </div>
+
+          <!-- Fluid H1: 56–72px desktop, 36–44px mobile -->
+          <h1 class="text-h1 hero-title-enter" dir="ltr">
+            Live Cultures. <br>
+            <span class="editorial-italic font-normal text-warm-orange">Wild Botanicals.</span><br>
+            Unfiltered Kombucha.
+          </h1>
+
+          <!-- Body Text: Inter, 16–18px desktop, 15–16px mobile, Line height 1.6–1.8 -->
+          <p class="lead-text max-w-xl hero-lead-enter" dir="ltr">
+            Born in Oregon's craft cellar district. We ferment single-origin whole tea leaves with an heirloom SCOBY symbiotic culture in neutral oak barrels—yielding over <strong class="text-stone-900 dark:text-white font-semibold">5 Billion living CFUs</strong> in every crisp, botanical pour.
+          </p>
+
+          <!-- Metric Highlights Grid -->
+          <div class="grid grid-cols-3 gap-4 pt-2 max-w-lg border-y border-stone-300/80 dark:border-stone-800/80 py-4 hero-metrics-enter" dir="ltr">
+            <div>
+              <span class="block font-heading font-bold text-2xl sm:text-3xl text-warm-orange">5.4B+</span>
+              <span class="text-[11px] uppercase tracking-wider text-stone-700 dark:text-stone-400 font-semibold font-sans">Live CFUs/Can</span>
+            </div>
+            <div>
+              <span class="block font-heading font-bold text-2xl sm:text-3xl text-[#1E4334] dark:text-emerald-400">21 Days</span>
+              <span class="text-[11px] uppercase tracking-wider text-stone-700 dark:text-stone-400 font-semibold font-sans">Oak Barrel Aging</span>
+            </div>
+            <div>
+              <span class="block font-heading font-bold text-2xl sm:text-3xl text-stone-900 dark:text-stone-200">0%</span>
+              <span class="text-[11px] uppercase tracking-wider text-stone-700 dark:text-stone-400 font-semibold font-sans">Added Sugars</span>
+            </div>
+          </div>
+
+          <!-- Buttons: Primary Forest Green + Secondary Warm Orange -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 hero-cta-enter">
+            <a href="products.html" class="btn-primary-forest text-decoration-none">
+              <span>Explore The Lineup</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="taproom.html#reservations" class="btn-secondary-orange text-decoration-none">
+              <i class="fa-solid fa-martini-glass text-xs"></i>
+              <span>Book a Taproom Table</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges with Tasteful Spacing -->
+          <div class="pt-3 flex flex-wrap items-center gap-6 text-xs text-stone-700 dark:text-stone-400 font-medium hero-trust-enter">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-leaf text-[#1E4334] dark:text-[#F4A261]"></i> USDA Certified Organic</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-seedling text-[#1E4334] dark:text-[#F4A261]"></i> 100% Vegan & Raw</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-sky-600 dark:text-sky-400"></i> Cold-Chain Shipped</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Bottle Composition & Card -->
+        <div class="lg:col-span-5 relative hero-card-enter">
+          <div class="relative mx-auto max-w-md">
+            
+            <!-- Glow backdrop circle -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#F4A261]/25 to-[#234E3D]/20 rounded-full filter blur-3xl transform scale-90"></div>
+
+            <!-- Main Feature Image with Glass Frame & Subtle Parallax Response -->
+            <div class="relative rounded-3xl overflow-hidden border border-white/20 dark:border-stone-700/60 shadow-2xl bg-white/40 dark:bg-stone-800/40 backdrop-blur-xl p-3 img-zoom-container">
+              <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=1200" 
+                   alt="Bramble & Oak Craft Kombucha Pour with Botanicals" 
+                   class="w-full h-[460px] object-cover rounded-2xl hover-scale hero-parallax-img"
+                   data-parallax-speed="0.08"
+                   loading="eager"
+                   fetchpriority="high">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SIGNATURE FLAVORS SHOWCASE
+       H2: 40–48px desktop, 28–34px mobile
+       H3: 24–30px desktop, 22–26px mobile
+       ========================================================================== -->
+  <section class="py-24 relative bg-[#F9F5EC]/60 dark:bg-[#111714]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
+        <span class="section-eyebrow">
+          Core Fermentation Releases
+        </span>
+        <h2 class="text-h2 font-heading">
+          Our Four Signature <span class="editorial-italic font-normal text-warm-orange">Living Brews</span>
+        </h2>
+        <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base">
+          Cold-fermented with unpasteurized heirloom cultures, cold-pressed botanicals, and raw mountain spring water.
+        </p>
+      </div>
+
+      <!-- 4 Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+        
+        <!-- Product 1: Yuzu Ginger Zing -->
+        <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="50">
+          <div>
+            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-[#F4A261]/10 to-transparent p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#F4A261] text-[#3A3028] shadow-sm">
+                Flagship Pour
+              </span>
+              <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=800" 
+                   alt="Yuzu Ginger Zing Craft Kombucha" 
+                   loading="lazy"
+                   class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <div class="p-5 space-y-3">
+              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
+                <span class="font-semibold text-warm-orange">5.4 Billion CFUs</span>
+                <span>0.4% ABV • 3.2 pH</span>
+              </div>
+              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+                Yuzu Ginger Zing
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+                Organic Sencha green tea base, cold-pressed Peruvian yellow ginger, and aromatic Japanese yuzu juice.
+              </p>
+              
+              <!-- Tasting notes tags with balanced letter spacing -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Spicy Ginger</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Yuzu Zest</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Honey Blossom</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
+            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
+              <div class="min-w-0 pr-1">
+                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.00</span>
+                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.00/ea)</span>
+                </div>
+              </div>
+              <button type="button" 
+                onclick="window.handleCardAddToCart(this, 'yuzu-ginger-zing', 'fourPack', 1)" 
+                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                aria-label="Add Yuzu Ginger Zing to cart">
+                <i class="fa-solid fa-plus text-[10px]"></i>
+                <span class="whitespace-nowrap">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Hibiscus Rose Hip -->
+        <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-rose-500/10 to-transparent p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-rose-600 text-white shadow-sm">
+                Crowd Favorite
+              </span>
+              <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=800" 
+                   alt="Hibiscus Rose Hip Craft Kombucha" 
+                   loading="lazy"
+                   class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <div class="p-5 space-y-3">
+              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
+                <span class="font-semibold text-rose-600 dark:text-rose-400">5.8 Billion CFUs</span>
+                <span>0.3% ABV • 3.1 pH</span>
+              </div>
+              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+                Hibiscus Rose Hip
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+                Egyptian hibiscus calyces, organic whole rose hips, and crushed wild elderberry puree. Tart and ruby red.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Wild Rose</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Elderberry</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Ruby Tart</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
+            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
+              <div class="min-w-0 pr-1">
+                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.00</span>
+                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.00/ea)</span>
+                </div>
+              </div>
+              <button type="button" 
+                onclick="window.handleCardAddToCart(this, 'hibiscus-rose-hip', 'fourPack', 1)" 
+                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                aria-label="Add Hibiscus Rose Hip to cart">
+                <i class="fa-solid fa-plus text-[10px]"></i>
+                <span class="whitespace-nowrap">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Blood Orange Bergamot -->
+        <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="150">
+          <div>
+            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-orange-500/10 to-transparent p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-orange-600 text-white shadow-sm">
+                Bestseller
+              </span>
+              <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&q=80&w=800" 
+                   alt="Blood Orange Bergamot Craft Kombucha" 
+                   loading="lazy"
+                   class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <div class="p-5 space-y-3">
+              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
+                <span class="font-semibold text-warm-orange">5.4 Billion CFUs</span>
+                <span>0.3% ABV • 3.2 pH</span>
+              </div>
+              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+                Blood Orange Bergamot
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+                Cold-fermented with Sicilian blood orange juice, aromatic bergamot peel, wild thyme, and organic black tea.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Moro Orange</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Bergamot Peel</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Wild Thyme</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
+            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
+              <div class="min-w-0 pr-1">
+                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.50</span>
+                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.12/ea)</span>
+                </div>
+              </div>
+              <button type="button" 
+                onclick="window.handleCardAddToCart(this, 'blood-orange-bergamot', 'fourPack', 1)" 
+                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                aria-label="Add Blood Orange Bergamot to cart">
+                <i class="fa-solid fa-plus text-[10px]"></i>
+                <span class="whitespace-nowrap">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Wild Blackberry Bramble -->
+        <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-[#234E3D]/15 to-transparent p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#234E3D] text-[#FFF8ED] shadow-sm">
+                House Signature
+              </span>
+              <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&q=80&w=800" 
+                   alt="Wild Blackberry Bramble Craft Kombucha" 
+                   loading="lazy"
+                   class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <div class="p-5 space-y-3">
+              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
+                <span class="font-semibold text-warm-orange">5.8 Billion CFUs</span>
+                <span>0.4% ABV • 3.3 pH</span>
+              </div>
+              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+                Wild Blackberry Bramble
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+                Hand-harvested Oregon wild blackberries, crushed elderberries, organic Darjeeling tea, and Madagascar vanilla bean.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Wild Blackberry</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Black Currant</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Elderberry</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
+            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
+              <div class="min-w-0 pr-1">
+                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$17.50</span>
+                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.38/ea)</span>
+                </div>
+              </div>
+              <button type="button" 
+                onclick="window.handleCardAddToCart(this, 'wild-blackberry-bramble', 'fourPack', 1)" 
+                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                aria-label="Add Wild Blackberry Bramble to cart">
+                <i class="fa-solid fa-plus text-[10px]"></i>
+                <span class="whitespace-nowrap">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom link to full catalog -->
+      <div class="mt-12 text-center">
+        <a href="products.html" class="inline-flex items-center gap-2 text-sm font-semibold text-warm-orange hover:text-[#E7924F] transition group text-decoration-none">
+          <span>View All 8 Living Flavors & Reserve Vintages</span>
+          <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE FERMENTATION PHILOSOPHY
+       ========================================================================== -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
+        <span class="section-eyebrow">
+          The Unhurried Craft
+        </span>
+        <h2 class="text-h2 font-heading">
+          Our 21-Day <span class="editorial-italic font-normal text-warm-orange">Living Fermentation</span> Process
+        </h2>
+        <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+          Unlike industrial pasteurized kombuchas that add synthetic probiotics after chemical filtering, Bramble & Oak is never heated, never stripped, and never forced.
+        </p>
+      </div>
+
+      <!-- 3-Step Process Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        
+        <!-- Step 1 -->
+        <div class="glass-card p-8 relative space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-2xl bg-[#F4A261]/15 text-warm-orange flex items-center justify-center font-bold text-2xl font-heading">
+            01
+          </div>
+          <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white">
+            Mountain Water & Whole Leaf Teas
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+            We steep biodynamic whole-leaf green Sencha, white peony, and single-estate Darjeeling teas in mineral-balanced Pacific Northwest mountain spring water.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-warm-orange flex items-center gap-1.5">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Rich in native tea catechins</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card p-8 relative space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-2xl bg-[#234E3D]/15 text-[#234E3D] dark:text-[#F4A261] flex items-center justify-center font-bold text-2xl font-heading">
+            02
+          </div>
+          <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white">
+            Heirloom Mother SCOBY Inoculation
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+            Our multi-generational symbiotic mother culture of beneficial yeasts (<em>Komagataeibacter</em> & <em>Lactobacillus</em>) gently digests unrefined cane sugars into organic acids.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-[#234E3D] dark:text-[#F4A261] flex items-center gap-1.5">
+            <i class="fa-solid fa-microscope"></i>
+            <span>Gluconic, Acetic & Glucuronic acids</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card p-8 relative space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 rounded-2xl bg-amber-700/15 text-amber-700 dark:text-[#F4A261] flex items-center justify-center font-bold text-2xl font-heading">
+            03
+          </div>
+          <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white">
+            Oak Barrel Conditioning 
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+            Transferred into neutral oak casks for secondary fermentation with whole cold-pressed botanicals, developing micro-effervescence before rapid cold-storage canning.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-warm-orange flex items-center gap-1.5">
+            <i class="fa-solid fa-snowflake"></i>
+            <span>Maintained at 36°F to preserve life</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SOCIAL PROOF / TAPROOM ATMOSPHERE
+       ========================================================================== -->
+  <section class="py-24 bg-[#F9F5EC]/60 dark:bg-[#111714] relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
+        <span class="section-eyebrow">
+          The Experience
+        </span>
+        <h2 class="text-h2 font-heading">
+          Where Fermentation Meets <span class="editorial-italic font-normal text-warm-orange">Hospitality</span>
+        </h2>
+        <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base">
+          Step into our flagship brick & cedar taproom. 12 rotating draft lines, botanical tasting flights, live acoustic sessions, and raw growler refills.
+        </p>
+      </div>
+
+      <!-- Mosaic Masonry Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Tile 1 -->
+        <div class="rounded-3xl overflow-hidden shadow-xl group relative h-80 hover-lift fade-up-scroll img-reveal-card img-zoom-container" data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&q=80&w=1200" 
+               alt="The Bramble & Oak Taproom Bar Counter" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-transparent p-6 flex flex-col justify-end text-white">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[#F4A261]">Cedar & Copper Bar</span>
+            <h4 class="text-h4 font-heading font-bold text-white m-0">12 Live Draft Taps</h4>
+          </div>
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="rounded-3xl overflow-hidden shadow-xl group relative h-80 hover-lift fade-up-scroll img-reveal-card img-zoom-container" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=1200" 
+               alt="Guests Enjoying Kombucha Flights" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-transparent p-6 flex flex-col justify-end text-white">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[#F4A261]">Sensory Tasting Flights</span>
+            <h4 class="text-h4 font-heading font-bold text-white m-0">Curated 4-Pour Paddles</h4>
+          </div>
+        </div>
+
+        <!-- Tile 3 -->
+        <div class="rounded-3xl overflow-hidden shadow-xl group relative h-80 hover-lift fade-up-scroll img-reveal-card img-zoom-container" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1200" 
+               alt="Oak Fermentation Cellar Tanks" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-transparent p-6 flex flex-col justify-end text-white">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[#F4A261]">Cellar Viewing Room</span>
+            <h4 class="text-h4 font-heading font-bold text-white m-0">Oak Cask Fermentation</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Card -->
+      <div class="mt-12 p-8 rounded-3xl bg-[#234E3D] text-[#FFF8ED] flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div class="space-y-1 text-center md:text-left">
+          <h3 class="text-h3 font-heading font-bold text-[#FFF8ED] m-0">Visiting the Pacific Northwest?</h3>
+          <p class="text-stone-300 text-sm m-0">Open Wednesday to Sunday • Dog-friendly garden • Fresh growlers to-go</p>
+        </div>
+        <a href="taproom.html" class="btn-secondary-orange text-xs font-semibold uppercase tracking-wider text-decoration-none">
+          Explore Taproom & Hours
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL COMPREHENSIVE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer pt-16 pb-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b footer-divider">
+        
+        <!-- Column 1 — Brand (4 cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble & Oak Craft Kombucha">
+            <div class="brand-logo-icon">
+              <i class="fa-solid fa-bottle-droplet text-lg"></i>
+            </div>
+            <div class="brand-logo-text flex flex-col justify-center">
+              <span class="brand-logo-title">Bramble &amp; Oak</span>
+              <span class="brand-logo-subtitle">Craft Kombucha Co.</span>
+            </div>
+          </a>
+          <p class="text-xs footer-desc max-w-sm m-0">
+            Dedicated to the unhurried craft of raw, living probiotic beverages. Fermented in neutral oak casks with whole botanicals, cold spring water, and wild cultures in Portland, Oregon.
+          </p>
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-2.5 pt-1">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 — Explore Bramble & Oak (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Explore Bramble &amp; Oak</h4>
+          <ul class="space-y-2 text-xs p-0 m-0 list-none">
+            <li><a href="index.html" class="footer-link">Our Story &amp; Experience</a></li>
+            <li><a href="home-niche.html" class="footer-link">The Kombucha Collection</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="taproom.html" class="footer-link">Taproom</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 — Discover Our Craft (3 cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Discover Our Craft</h4>
+          <ul class="space-y-2 text-xs p-0 m-0 list-none">
+            <li><a href="products.html?category=citrus-zest" class="footer-link">Citrus &amp; Zest</a></li>
+            <li><a href="products.html?category=berry-blends" class="footer-link">Berry Blends</a></li>
+            <li><a href="products.html?category=tropical-fruits" class="footer-link">Tropical Fruits</a></li>
+            <li><a href="products.html?category=botanical-herbal" class="footer-link">Botanical &amp; Herbal</a></li>
+            <li><a href="products.html?category=ginger-spice" class="footer-link">Ginger &amp; Spice</a></li>
+            <li><a href="products.html?category=seasonal-specials" class="footer-link">Seasonal Specials</a></li>
+          </ul>
+          <div class="pt-2.5 border-t border-stone-200/50 dark:border-stone-800/50 text-[11px] footer-desc space-y-0.5">
+            <p class="m-0 font-semibold text-[#234E3D] dark:text-[#F4A261] flex items-center gap-1.5">
+              <i class="fa-regular fa-clock text-[10px]"></i>
+              <span>Taproom Hours</span>
+            </p>
+            <p class="m-0">Wed–Fri: 3PM–10PM</p>
+            <p class="m-0">Sat–Sun: 12PM–11PM</p>
+          </div>
+        </div>
+
+        <!-- Column 4 — Fermentation Circle (Newsletter) (3 cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Fermentation Circle</h4>
+          <p class="text-xs footer-desc leading-relaxed m-0">
+            Join 12,000+ living culture enthusiasts. Get early access to small-batch barrel drops and 15% off your first cold-pack order.
+          </p>
+
+          <form class="newsletter-form space-y-2 pt-1">
+            <div class="flex gap-2">
+              <input type="email" placeholder="Your email address" required 
+                class="footer-input flex-1 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
+              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0">
+                Join
+              </button>
+            </div>
+            <span class="block text-[11px] footer-desc">Cold-chain delivered to your door. No spam ever.</span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs footer-copyright">
+        <div class="text-center sm:text-left">
+          &copy; <span class="current-year">2026</span> Bramble &amp; Oak Craft Kombucha Taproom &amp; Bottling Co. All rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center justify-center sm:justify-end gap-5">
+          <a href="about.html" class="footer-link">Terms of Fermentation</a>
+          <a href="products.html" class="footer-link">Cold-Chain Guarantee</a>
+          <a href="contact.html" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCRIPTS (Bootstrap 5.3, AOS, Products, Cart, Main)
+       ========================================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
