@@ -246,7 +246,7 @@ class CartEngine {
                   </div>
                   <div>
                     <label for="chkEmail" class="block text-xs font-semibold mb-1 text-stone-600 dark:text-stone-300">Email Address (for Dispatch & Probiotic Log) <span class="text-rose-500">*</span></label>
-                    <input type="email" id="chkEmail" required placeholder="e.g. alex.rivers@fermentmail.com" class="w-full px-3 py-2 text-sm rounded-lg border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#F4A261] transition">
+                    <input type="email" id="chkEmail" required placeholder="e.g. alex.rivers@fermentmail.com" autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="w-full px-3 py-2 text-sm rounded-lg border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#F4A261] transition">
                     <span id="chkEmailError" class="form-error-msg hidden">Please enter a valid email address (e.g. name@domain.com).</span>
                   </div>
                   <div>
@@ -780,22 +780,22 @@ class CartEngine {
             <!-- Item Details & Controls -->
             <div class="flex-1 min-w-0 flex flex-col justify-between self-stretch">
               <div>
-                <div class="flex items-start justify-between gap-1">
-                  <h4 class="font-heading font-bold text-xs sm:text-sm text-stone-900 dark:text-[#FFF8ED] leading-snug truncate m-0">
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="cart-item-title font-heading font-bold text-xs sm:text-sm text-stone-900 dark:text-[#FFF8ED] leading-snug m-0">
                     ${item.name}
                   </h4>
                   <button type="button" onclick="(window.brambleCart||window.zymaCart).removeItem(${index})" 
                     aria-label="Remove ${item.name}"
-                    class="w-7 h-7 -mt-1 -mr-1 rounded-lg flex items-center justify-center text-stone-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition">
+                    class="w-7 h-7 -mt-1 -mr-1 rounded-lg flex items-center justify-center text-stone-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition shrink-0">
                     <i class="fa-regular fa-trash-can text-xs"></i>
                   </button>
                 </div>
                 
-                <div class="flex flex-wrap items-center gap-1.5 mt-1">
-                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#234E3D]/10 dark:bg-[#234E3D]/30 text-[#234E3D] dark:text-emerald-400">
+                <div class="cart-item-meta flex flex-wrap items-center gap-1.5 mt-1">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#234E3D]/10 dark:bg-[#234E3D]/30 text-[#234E3D] dark:text-emerald-400 whitespace-nowrap">
                     ${item.packLabel}
                   </span>
-                  <span class="text-[10px] text-stone-400">
+                  <span class="text-[10px] text-stone-400 whitespace-nowrap">
                     $${item.unitPrice.toFixed(2)}/unit
                   </span>
                 </div>
@@ -913,17 +913,40 @@ class CartEngine {
     const fields = [
       { id: 'chkName', errId: 'chkNameError', validate: v => /^[A-Za-z\s.'-]{2,}$/.test(v) && !/\d/.test(v) },
       { id: 'chkPhone', errId: 'chkPhoneError', validate: v => v.replace(/\D/g, '').length >= 10 && !/[a-zA-Z]/.test(v) },
-      { id: 'chkEmail', errId: 'chkEmailError', validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) },
+      { 
+        id: 'chkEmail', 
+        errId: 'chkEmailError', 
+        validate: v => !/[A-Z]/.test(v) && /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(v),
+        getErrMsg: v => /[A-Z]/.test(v) 
+          ? 'Email address must contain only lowercase letters (no uppercase letters allowed, e.g. name@domain.com).' 
+          : 'Please enter a valid email address (e.g. name@domain.com).'
+      },
       { id: 'chkAddress', errId: 'chkAddressError', validate: v => v.length >= 5 },
       { id: 'chkCity', errId: 'chkCityError', validate: v => /^[A-Za-z\s.'-]{2,}$/.test(v) && !/\d/.test(v) },
       { id: 'chkZip', errId: 'chkZipError', validate: v => /^\d{5}$/.test(v) }
     ];
 
-    fields.forEach(({ id, errId, validate }) => {
+    fields.forEach(({ id, errId, validate, getErrMsg }) => {
       const input = document.getElementById(id);
       const errEl = document.getElementById(errId);
       if (!input || input.dataset.validated) return;
       input.dataset.validated = 'true';
+
+      if (id === 'chkEmail') {
+        input.setAttribute('autocapitalize', 'none');
+        input.setAttribute('spellcheck', 'false');
+        input.setAttribute('pattern', '[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$');
+        input.addEventListener('input', () => {
+          if (/[A-Z]/.test(input.value)) {
+            const start = input.selectionStart;
+            const end = input.selectionEnd;
+            input.value = input.value.toLowerCase();
+            if (start !== null && end !== null) {
+              input.setSelectionRange(start, end);
+            }
+          }
+        });
+      }
 
       input.addEventListener('input', () => {
         if (input.value.trim() === '') {
@@ -936,7 +959,10 @@ class CartEngine {
         } else {
           input.classList.add('form-input-error');
           input.classList.remove('form-input-valid');
-          if (errEl) errEl.classList.remove('hidden');
+          if (errEl) {
+            if (getErrMsg) errEl.textContent = getErrMsg(input.value.trim());
+            errEl.classList.remove('hidden');
+          }
         }
       });
 
@@ -944,7 +970,10 @@ class CartEngine {
         if (!validate(input.value.trim())) {
           input.classList.remove('form-input-valid');
           input.classList.add('form-input-error');
-          if (errEl) errEl.classList.remove('hidden');
+          if (errEl) {
+            if (getErrMsg) errEl.textContent = getErrMsg(input.value.trim());
+            errEl.classList.remove('hidden');
+          }
         } else {
           input.classList.remove('form-input-error');
           input.classList.add('form-input-valid');
@@ -999,7 +1028,13 @@ class CartEngine {
     const cityVal = cityInput ? cityInput.value.trim() : '';
     const zipVal = zipInput ? zipInput.value.trim() : '';
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const isEmailValid = (v) => !/[A-Z]/.test(v) && /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(v);
+    const emailErrEl = document.getElementById('chkEmailError');
+    if (emailErrEl && /[A-Z]/.test(emailVal)) {
+      emailErrEl.textContent = 'Email address must contain only lowercase letters (no uppercase letters allowed, e.g. name@domain.com).';
+    } else if (emailErrEl) {
+      emailErrEl.textContent = 'Please enter a valid email address (e.g. name@domain.com).';
+    }
     let isValid = true;
     let firstInvalid = null;
 
@@ -1021,7 +1056,7 @@ class CartEngine {
 
     checkField(nameInput, 'chkNameError', /^[A-Za-z\s.'-]{2,}$/.test(nameVal) && !/\d/.test(nameVal));
     checkField(phoneInput, 'chkPhoneError', phoneVal.replace(/\D/g, '').length >= 10 && !/[a-zA-Z]/.test(phoneVal));
-    checkField(emailInput, 'chkEmailError', emailRegex.test(emailVal));
+    checkField(emailInput, 'chkEmailError', isEmailValid(emailVal));
     checkField(addressInput, 'chkAddressError', addressVal.length >= 5);
     checkField(cityInput, 'chkCityError', /^[A-Za-z\s.'-]{2,}$/.test(cityVal) && !/\d/.test(cityVal));
     checkField(zipInput, 'chkZipError', /^\d{5}$/.test(zipVal));

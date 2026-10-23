@@ -78,7 +78,7 @@
   </script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/custom.css?v=2.2">
 </head>
 <body class="bg-[#FDFBF7] dark:bg-[#0F1613] text-[#3A3028] dark:text-[#FFF8ED] transition-colors duration-300 font-body">
 
@@ -200,8 +200,12 @@
   <section class="relative pt-36 pb-16 overflow-hidden">
     <!-- Hero Background Image & Atmospheric Overlays -->
     <div class="hero-bg-layer" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=2000" 
-           alt="Sun-Drenched Brewery Greenhouse and Botanical Herb Garden" 
+      <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=2000" 
+           srcset="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=768 768w,
+                   https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1280 1280w,
+                   https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=2000 2000w"
+           sizes="100vw"
+           alt="Warm Timber Taproom Bar and Brewery Tasting Counter at Bramble and Oak Cellars" 
            class="hero-bg-img hero-parallax-bg" 
            data-parallax-speed="0.16"
            loading="eager" 
@@ -349,7 +353,7 @@
                   <label for="contactEmail" class="block text-xs font-semibold mb-1 text-[#3A3028]/80 dark:text-[#FFF8ED]/80">
                     Email Address <span class="text-warm-orange">*</span>
                   </label>
-                  <input type="email" id="contactEmail" required placeholder="alex@mercer.com" 
+                  <input type="email" id="contactEmail" required placeholder="alex@mercer.com" autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
                     class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#15211B] text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none focus:border-[#F4A261] transition">
                   <span id="emailError" class="form-error-msg hidden">Please enter a valid email address (e.g. alex@example.com).</span>
                 </div>
@@ -521,16 +525,16 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        GLOBAL COMPREHENSIVE FOOTER
        ========================================================================== -->
   <footer class="site-footer pt-16 pb-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b footer-divider">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 pb-12 border-b footer-divider">
         
-        <!-- Column 1 — Brand (4 cols) -->
-        <div class="lg:col-span-4 space-y-4">
-          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble & Oak Craft Kombucha">
+        <!-- Column 1 - Brand (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-4">
+          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble &amp; Oak Craft Kombucha">
             <div class="brand-logo-icon">
               <i class="fa-solid fa-bottle-droplet text-lg"></i>
             </div>
@@ -559,8 +563,8 @@
           </div>
         </div>
 
-        <!-- Column 2 — Explore Bramble & Oak (2 cols) -->
-        <div class="lg:col-span-2 space-y-3">
+        <!-- Column 2 - Explore Bramble & Oak (2 cols) -->
+        <div class="lg:col-span-2 xl:col-span-2 space-y-3">
           <h4 class="footer-heading text-xs m-0">Explore Bramble &amp; Oak</h4>
           <ul class="space-y-2 text-xs p-0 m-0 list-none">
             <li><a href="index.html" class="footer-link">Our Story &amp; Experience</a></li>
@@ -573,8 +577,8 @@
           </ul>
         </div>
 
-        <!-- Column 3 — Discover Our Craft (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
+        <!-- Column 3 - Discover Our Craft (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-3">
           <h4 class="footer-heading text-xs m-0">Discover Our Craft</h4>
           <ul class="space-y-2 text-xs p-0 m-0 list-none">
             <li><a href="products.html?category=citrus-zest" class="footer-link">Citrus &amp; Zest</a></li>
@@ -589,23 +593,23 @@
               <i class="fa-regular fa-clock text-[10px]"></i>
               <span>Taproom Hours</span>
             </p>
-            <p class="m-0">Wed–Fri: 3PM–10PM</p>
-            <p class="m-0">Sat–Sun: 12PM–11PM</p>
+            <p class="m-0">Wed &ndash; Fri: 3PM &ndash; 10PM</p>
+            <p class="m-0">Sat &ndash; Sun: 12PM &ndash; 11PM</p>
           </div>
         </div>
 
-        <!-- Column 4 — Fermentation Circle (Newsletter) (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
+        <!-- Column 4 - Fermentation Circle (Newsletter) (4 cols) -->
+        <div class="lg:col-span-4 xl:col-span-4 space-y-3">
           <h4 class="footer-heading text-xs m-0">Fermentation Circle</h4>
           <p class="text-xs footer-desc leading-relaxed m-0">
             Join 12,000+ living culture enthusiasts. Get early access to small-batch barrel drops and 15% off your first cold-pack order.
           </p>
 
-          <form class="newsletter-form space-y-2 pt-1">
-            <div class="flex gap-2">
-              <input type="email" placeholder="Your email address" required 
-                class="footer-input flex-1 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
-              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0">
+          <form class="newsletter-form space-y-2 mt-4 pt-1">
+            <div class="flex gap-2 w-full">
+              <input type="email" placeholder="Your email address" required autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
+                class="footer-input flex-1 min-w-0 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
+              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0 whitespace-nowrap">
                 Join
               </button>
             </div>
@@ -621,9 +625,9 @@
           &copy; <span class="current-year">2026</span> Bramble &amp; Oak Craft Kombucha Taproom &amp; Bottling Co. All rights reserved.
         </div>
         <div class="flex flex-wrap items-center justify-center sm:justify-end gap-5">
-          <a href="about.html" class="footer-link">Terms of Fermentation</a>
-          <a href="products.html" class="footer-link">Cold-Chain Guarantee</a>
-          <a href="contact.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Fermentation</a>
+          <a href="guarantee.html" class="footer-link">Cold-Chain Guarantee</a>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -633,8 +637,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/products-data.js"></script>
-  <script src="assets/js/cart.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
 
   <!-- Interactive Form Logic with Validation and Client-Side Demo Feedback -->
   <script>
@@ -663,7 +667,28 @@
       const messageError = document.getElementById('messageError');
       const companyError = document.getElementById('companyError');
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+      function validateEmailInput(input, errEl) {
+        if (!input) return true;
+        const val = input.value.trim();
+        if (!val) {
+          if (errEl) errEl.textContent = 'Please enter an email address.';
+          setFieldError(input, errEl);
+          return false;
+        }
+        if (/[A-Z]/.test(val)) {
+          if (errEl) errEl.textContent = 'Email address must contain only lowercase letters (no uppercase letters allowed, e.g. alex@example.com).';
+          setFieldError(input, errEl);
+          return false;
+        }
+        if (!emailRegex.test(val)) {
+          if (errEl) errEl.textContent = 'Please enter a valid email address (e.g. alex@example.com).';
+          setFieldError(input, errEl);
+          return false;
+        }
+        clearFieldError(input, errEl);
+        return true;
+      }
 
       // Typing Filters: Proactively block illegal characters
       // Full Name & Company: letters only, NO digits
@@ -745,11 +770,34 @@
       }
 
       if (emailInput) {
+        emailInput.setAttribute('autocapitalize', 'none');
+        emailInput.setAttribute('spellcheck', 'false');
+        emailInput.setAttribute('pattern', '[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$');
         emailInput.addEventListener('input', () => {
-          if (emailRegex.test(emailInput.value.trim())) clearFieldError(emailInput, emailError);
+          if (/[A-Z]/.test(emailInput.value)) {
+            const start = emailInput.selectionStart;
+            const end = emailInput.selectionEnd;
+            emailInput.value = emailInput.value.toLowerCase();
+            if (start !== null && end !== null) {
+              emailInput.setSelectionRange(start, end);
+            }
+          }
+          const val = emailInput.value.trim();
+          if (!val) {
+            clearFieldError(emailInput, emailError);
+            emailInput.classList.remove('form-input-valid');
+          } else if (/[A-Z]/.test(val)) {
+            if (emailError) emailError.textContent = 'Email address must contain only lowercase letters (no uppercase letters allowed, e.g. alex@example.com).';
+            setFieldError(emailInput, emailError);
+          } else if (!emailRegex.test(val)) {
+            if (emailError) emailError.textContent = 'Please enter a valid email address (e.g. alex@example.com).';
+            setFieldError(emailInput, emailError);
+          } else {
+            clearFieldError(emailInput, emailError);
+          }
         });
         emailInput.addEventListener('blur', () => {
-          if (!emailRegex.test(emailInput.value.trim())) setFieldError(emailInput, emailError);
+          validateEmailInput(emailInput, emailError);
         });
       }
 
@@ -808,7 +856,7 @@
           }
 
           // Validate Email
-          if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+          if (!validateEmailInput(emailInput, emailError)) {
             setFieldError(emailInput, emailError);
             isValid = false;
             if (!firstInvalid) firstInvalid = emailInput;

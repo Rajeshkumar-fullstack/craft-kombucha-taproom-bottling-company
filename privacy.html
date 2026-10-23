@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Bramble &amp; Oak Craft Kombucha</title>
+  <meta name="description" content="Official Privacy Policy for Bramble & Oak Craft Kombucha. Learn how we safeguard your data, delivery details, newsletter privacy, and zero-spam policy.">
+
+  <!-- Responsive Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#234E3D">
+
+  <!-- Zero-Flash Theme & RTL Initializer -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('bramble_theme_preference') || localStorage.getItem('zyma_theme_preference');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      const dir = localStorage.getItem('bramble_direction_preference') || localStorage.getItem('zyma_direction_preference');
+      if (dir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'forest-green': '#234E3D',
+            'forest-light': '#2F6751',
+            'warm-orange': '#F4A261',
+            'warm-orange-hover': '#E7904B',
+            'dark-brown': '#3A3028',
+            'cream': '#FFF8ED',
+            'cream-light': '#FDFBF7',
+            'cream-surface': '#F5EEDB'
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css?v=2.2">
+</head>
+<body class="bg-[#FDFBF7] dark:bg-[#0F1613] text-[#3A3028] dark:text-[#FFF8ED] transition-colors duration-300 font-body">
+
+  <!-- ==========================================================================
+       GLOBAL STICKY GLASSMORPHIC NAVBAR
+       ========================================================================== -->
+  <header id="mainNavbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 border-b border-transparent">
+    <div class="container mx-auto px-2.5 sm:px-6 lg:px-8">
+      <div class="navbar-header-row flex items-center justify-between flex-nowrap w-full">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo flex items-center gap-2.5 sm:gap-3 group text-decoration-none shrink min-w-0" aria-label="Bramble & Oak Craft Kombucha">
+          <div class="brand-logo-icon shrink-0">
+            <i class="fa-solid fa-bottle-droplet text-base sm:text-lg"></i>
+          </div>
+          <div class="brand-logo-text flex flex-col justify-center min-w-0">
+            <span class="brand-logo-title">Bramble &amp; Oak</span>
+            <span class="brand-logo-subtitle">Craft Kombucha Co.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-[#3A3028] dark:text-[#FFF8ED]">
+          <div class="relative nav-dropdown-wrapper" id="homeDropdownWrapper">
+            <button id="homeDropdownBtn" class="nav-link-item flex items-center gap-1.5 hover:text-[#F4A261] dark:hover:text-[#F4A261] transition py-2 border-0 bg-transparent" aria-haspopup="true" aria-expanded="false">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down text-[10px] opacity-75 transition-transform duration-200"></i>
+            </button>
+            <div id="homeDropdownMenu" class="nav-dropdown-menu absolute top-full left-0 mt-2 w-64 p-2 rounded-2xl bg-[#FDFBF7] dark:bg-[#17211C] border border-[#3A3028]/10 dark:border-[#FFF8ED]/10 shadow-2xl z-50">
+              <a href="index.html" class="block px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none">
+                <span class="block font-bold">Our Story &amp; Experience</span>
+                <span class="text-[11px] text-[#3A3028]/70 dark:text-[#FFF8ED]/70 font-normal">General services &amp; brewery showcase</span>
+              </a>
+              <a href="home-niche.html" class="block px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 hover:text-[#F4A261] transition text-decoration-none mt-1">
+                <span class="block font-bold">The Kombucha Collection</span>
+                <span class="text-[11px] text-[#3A3028]/70 dark:text-[#FFF8ED]/70 font-normal">Artisanal bottles &amp; reserve cellar</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">About</a>
+          <a href="products.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Products</a>
+          <a href="taproom.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Taproom</a>
+          <a href="blog.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Blog</a>
+          <a href="contact.html" class="nav-link-item hover:text-[#F4A261] dark:hover:text-[#F4A261] transition text-decoration-none">Contact</a>
+        </nav>
+
+        <!-- Utilities -->
+        <div class="navbar-utilities-group flex items-center gap-1 sm:gap-2 lg:gap-2.5 shrink-0">
+          <button class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 hover:bg-[#F4A261]/15 flex items-center justify-center transition shrink-0" title="Toggle Theme" aria-label="Toggle dark/light mode">
+            <i class="theme-toggle-icon fa-solid fa-sun text-[#F4A261] text-xs sm:text-sm"></i>
+          </button>
+          <button class="rtl-toggle-btn flex items-center justify-center h-8 sm:h-9 px-2 sm:px-2.5 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 hover:bg-[#F4A261]/15 text-xs font-bold text-[#3A3028] dark:text-[#FFF8ED] transition shrink-0" title="Toggle Direction" aria-label="Toggle text direction">
+            <span class="rtl-toggle-text text-[11px] sm:text-xs font-bold">RTL</span>
+          </button>
+          <button data-cart-trigger class="btn-primary-forest relative px-2.5 sm:px-3.5 h-8 sm:h-9 rounded-lg sm:rounded-xl text-xs flex items-center gap-1.5 sm:gap-2 shadow-md shrink-0" aria-label="Open Cart">
+            <i class="fa-solid fa-bottle-droplet text-xs sm:text-sm text-[#F4A261]"></i>
+            <span class="hidden sm:inline">Reserve</span>
+            <span class="cart-badge-count absolute -top-1.5 -right-1.5 min-w-[18px] sm:min-w-[20px] h-[18px] sm:h-[20px] px-1 bg-[#F4A261] text-[#3A3028] text-[10px] sm:text-[11px] font-bold rounded-full flex items-center justify-center shadow">
+              0
+            </span>
+          </button>
+          <button id="mobileMenuToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl border border-[#3A3028]/15 dark:border-[#FFF8ED]/15 bg-white/70 dark:bg-[#17211C]/70 flex items-center justify-center text-[#3A3028] dark:text-[#FFF8ED] focus:outline-none shrink-0" aria-label="Open Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars text-xs sm:text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobileMenuDropdown" class="lg:hidden hidden mt-3 p-4 rounded-2xl bg-[#FDFBF7]/98 dark:bg-[#17211C]/98 border border-[#3A3028]/10 dark:border-[#FFF8ED]/10 shadow-2xl backdrop-blur-xl space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 text-decoration-none">Our Story &amp; Experience</a>
+        <a href="home-niche.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-[#3A3028] dark:text-[#FFF8ED] hover:bg-[#F4A261]/15 text-decoration-none">The Kombucha Collection</a>
+        <a href="about.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">About</a>
+        <a href="products.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">Products</a>
+        <a href="taproom.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">Taproom</a>
+        <a href="blog.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">Blog</a>
+        <a href="contact.html" class="block px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#F4A261]/15 text-[#3A3028] dark:text-[#FFF8ED] text-decoration-none">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO: PRIVACY POLICY
+       ========================================================================== -->
+  <section class="relative pt-36 pb-16 overflow-hidden">
+    <div class="hero-bg-layer" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=2000" 
+           srcset="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=768 768w,
+                   https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=1280 1280w,
+                   https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=2000 2000w"
+           sizes="100vw"
+           alt="Pure Living Kombucha Glass Pour" 
+           class="hero-bg-img hero-parallax-bg" 
+           data-parallax-speed="0.16"
+           loading="eager" 
+           fetchpriority="high">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-gradient-bottom"></div>
+    </div>
+
+    <div class="ambient-glow-amber top-12 left-10"></div>
+    <div class="ambient-glow-green bottom-0 right-10"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
+      <span class="section-eyebrow hero-eyebrow-enter">
+        Data Ethics &amp; Transparency
+      </span>
+      <h1 class="text-h1 hero-title-enter mt-2">
+        Privacy <span class="editorial-italic font-normal text-warm-orange">Policy</span>
+      </h1>
+      <p class="lead-text mt-4 mx-auto max-w-2xl text-stone-600 dark:text-stone-300 hero-lead-enter">
+        We respect your privacy just as we respect the purity of our fermentation cultures. We never sell, rent, or trade your personal data.
+      </p>
+      <div class="mt-4 text-xs text-stone-500 dark:text-stone-400">
+        Last Updated: October 2026 &bull; Compliant with Oregon &amp; CCPA Privacy Standards
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRIVACY CONTENT
+       ========================================================================== -->
+  <main class="py-12 pb-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-8">
+
+      <!-- Section 1 -->
+      <section class="glass-card p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-warm-orange/15 text-warm-orange flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h2 class="font-heading font-bold text-xl sm:text-2xl text-[#3A3028] dark:text-[#FFF8ED] m-0">
+            1. Information We Collect
+          </h2>
+        </div>
+        <p class="text-sm leading-relaxed text-stone-700 dark:text-stone-300">
+          When you place a bottle reservation, reserve a tasting table, or contact our cellar team, we collect only information strictly necessary to fulfill your request:
+        </p>
+        <ul class="text-sm leading-relaxed text-stone-700 dark:text-stone-300 space-y-2 list-disc pl-5">
+          <li><strong>Contact &amp; Delivery Details:</strong> Name, physical shipping address for temperature-controlled parcel routing, telephone number for delivery notifications, and email address for digital receipts and dispatch tracking.</li>
+          <li><strong>Taproom Booking Data:</strong> Date, party size, seating preference, and dietary or occasion notes for table reservations.</li>
+          <li><strong>Technical Preferences:</strong> Theme preference (dark/light mode) and layout direction (LTR/RTL) stored locally in your browser’s <code>localStorage</code>.</li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="glass-card p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <h2 class="font-heading font-bold text-xl sm:text-2xl text-[#3A3028] dark:text-[#FFF8ED] m-0">
+            2. Payment Processing Security
+          </h2>
+        </div>
+        <p class="text-sm leading-relaxed text-stone-700 dark:text-stone-300">
+          We do not store credit card numbers, CVV security codes, or raw banking credentials on our servers. All digital payments are processed through PCI-DSS Level 1 certified payment gateways with end-to-end TLS 1.3 encryption.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="glass-card p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-500 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <h2 class="font-heading font-bold text-xl sm:text-2xl text-[#3A3028] dark:text-[#FFF8ED] m-0">
+            3. The Fermentation Circle: Zero-Spam Guarantee
+          </h2>
+        </div>
+        <p class="text-sm leading-relaxed text-stone-700 dark:text-stone-300">
+          When you join our email newsletter, we send only curated cellar dispatches, seasonal barrel release announcements, and exclusive community discounts. Every email contains an instant, 1-click unsubscribe link. We never sell or exchange our subscriber roster with outside marketing syndicates.
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="glass-card p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-lg font-bold shrink-0">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h2 class="font-heading font-bold text-xl sm:text-2xl text-[#3A3028] dark:text-[#FFF8ED] m-0">
+            4. Your Rights &amp; Data Control
+          </h2>
+        </div>
+        <p class="text-sm leading-relaxed text-stone-700 dark:text-stone-300">
+          You have the right to request a copy of your stored order records, request deletion of your contact profile, or update your delivery details at any time. Simply send a note to our cellar team via our <a href="contact.html" class="text-warm-orange font-semibold hover:underline">Contact Dispatch Portal</a>.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+    <!-- ==========================================================================
+       GLOBAL COMPREHENSIVE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer pt-16 pb-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 pb-12 border-b footer-divider">
+        
+        <!-- Column 1 - Brand (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-4">
+          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble &amp; Oak Craft Kombucha">
+            <div class="brand-logo-icon">
+              <i class="fa-solid fa-bottle-droplet text-lg"></i>
+            </div>
+            <div class="brand-logo-text flex flex-col justify-center">
+              <span class="brand-logo-title">Bramble &amp; Oak</span>
+              <span class="brand-logo-subtitle">Craft Kombucha Co.</span>
+            </div>
+          </a>
+          <p class="text-xs footer-desc max-w-sm m-0">
+            Dedicated to the unhurried craft of raw, living probiotic beverages. Fermented in neutral oak casks with whole botanicals, cold spring water, and wild cultures in Portland, Oregon.
+          </p>
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-2.5 pt-1">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 - Explore Bramble & Oak (2 cols) -->
+        <div class="lg:col-span-2 xl:col-span-2 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Explore Bramble &amp; Oak</h4>
+          <ul class="space-y-2 text-xs p-0 m-0 list-none">
+            <li><a href="index.html" class="footer-link">Our Story &amp; Experience</a></li>
+            <li><a href="home-niche.html" class="footer-link">The Kombucha Collection</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="taproom.html" class="footer-link">Taproom</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 - Discover Our Craft (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Discover Our Craft</h4>
+          <ul class="space-y-2 text-xs p-0 m-0 list-none">
+            <li><a href="products.html?category=citrus-zest" class="footer-link">Citrus &amp; Zest</a></li>
+            <li><a href="products.html?category=berry-blends" class="footer-link">Berry Blends</a></li>
+            <li><a href="products.html?category=tropical-fruits" class="footer-link">Tropical Fruits</a></li>
+            <li><a href="products.html?category=botanical-herbal" class="footer-link">Botanical &amp; Herbal</a></li>
+            <li><a href="products.html?category=ginger-spice" class="footer-link">Ginger &amp; Spice</a></li>
+            <li><a href="products.html?category=seasonal-specials" class="footer-link">Seasonal Specials</a></li>
+          </ul>
+          <div class="pt-2.5 border-t border-stone-200/50 dark:border-stone-800/50 text-[11px] footer-desc space-y-0.5">
+            <p class="m-0 font-semibold text-[#234E3D] dark:text-[#F4A261] flex items-center gap-1.5">
+              <i class="fa-regular fa-clock text-[10px]"></i>
+              <span>Taproom Hours</span>
+            </p>
+            <p class="m-0">Wed &ndash; Fri: 3PM &ndash; 10PM</p>
+            <p class="m-0">Sat &ndash; Sun: 12PM &ndash; 11PM</p>
+          </div>
+        </div>
+
+        <!-- Column 4 - Fermentation Circle (Newsletter) (4 cols) -->
+        <div class="lg:col-span-4 xl:col-span-4 space-y-3">
+          <h4 class="footer-heading text-xs m-0">Fermentation Circle</h4>
+          <p class="text-xs footer-desc leading-relaxed m-0">
+            Join 12,000+ living culture enthusiasts. Get early access to small-batch barrel drops and 15% off your first cold-pack order.
+          </p>
+
+          <form class="newsletter-form space-y-2 mt-4 pt-1">
+            <div class="flex gap-2 w-full">
+              <input type="email" placeholder="Your email address" required autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
+                class="footer-input flex-1 min-w-0 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
+              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0 whitespace-nowrap">
+                Join
+              </button>
+            </div>
+            <span class="block text-[11px] footer-desc">Cold-chain delivered to your door. No spam ever.</span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs footer-copyright">
+        <div class="text-center sm:text-left">
+          &copy; <span class="current-year">2026</span> Bramble &amp; Oak Craft Kombucha Taproom &amp; Bottling Co. All rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center justify-center sm:justify-end gap-5">
+          <a href="terms.html" class="footer-link">Terms of Fermentation</a>
+          <a href="guarantee.html" class="footer-link">Cold-Chain Guarantee</a>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/cart.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
+</body>
+</html>

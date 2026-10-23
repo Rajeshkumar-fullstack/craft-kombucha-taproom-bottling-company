@@ -505,7 +505,7 @@
   // 8. Newsletter Subscription Form
   function initNewsletter() {
     const forms = document.querySelectorAll('.newsletter-form');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = (v) => !/[A-Z]/.test(v) && /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(v);
 
     forms.forEach(form => {
       const input = form.querySelector('input[type="email"]');
@@ -513,16 +513,21 @@
 
       if (input) {
         input.addEventListener('input', () => {
-          if (emailRegex.test(input.value.trim())) {
+          const val = input.value.trim();
+          if (val && isEmailValid(val)) {
             input.classList.remove('form-input-error');
             input.classList.add('form-input-valid');
+          } else if (val && /[A-Z]/.test(val)) {
+            input.classList.add('form-input-error');
+            input.classList.remove('form-input-valid');
           } else {
             input.classList.remove('form-input-valid');
           }
         });
 
         input.addEventListener('blur', () => {
-          if (input.value.trim() && !emailRegex.test(input.value.trim())) {
+          const val = input.value.trim();
+          if (val && !isEmailValid(val)) {
             input.classList.add('form-input-error');
             input.classList.remove('form-input-valid');
           }
@@ -533,13 +538,16 @@
         e.preventDefault();
         const email = input ? input.value.trim() : '';
 
-        if (!email || !emailRegex.test(email)) {
+        if (!email || !isEmailValid(email)) {
           if (input) {
             input.classList.remove('form-input-valid');
             input.classList.add('form-input-error');
             input.focus();
           }
-          const warn = 'Please enter a valid email address (e.g. name@example.com).';
+          let warn = 'Please enter a valid email address (e.g. name@example.com).';
+          if (/[A-Z]/.test(email)) {
+            warn = 'Email address must contain only lowercase letters (no uppercase letters allowed, e.g. name@example.com).';
+          }
           if (window.brambleCart && typeof window.brambleCart.showToast === 'function') {
             window.brambleCart.showToast(warn, 'warning');
           } else if (window.zymaCart && typeof window.zymaCart.showToast === 'function') {
@@ -687,7 +695,14 @@
     const fallbackSrc = 'https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=1200';
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    document.querySelectorAll('img').forEach(img => {
+    // Exclude eager hero background images from lazy-fade so they are always 100% visible immediately
+    document.querySelectorAll('.hero-bg-img').forEach(heroImg => {
+      heroImg.classList.remove('img-lazy-fade');
+      heroImg.classList.add('img-loaded');
+      heroImg.style.opacity = '1';
+    });
+
+    document.querySelectorAll('img:not(.hero-bg-img)').forEach(img => {
       // Smooth fade-in transition on lazy-loaded images
       if (!isReducedMotion) {
         if (img.complete && img.naturalWidth > 0) {
@@ -700,29 +715,94 @@
         }
       }
 
-      // Fallback for broken image URLs
-      img.addEventListener('error', function() {
-        if (this.src !== fallbackSrc) {
-          this.src = fallbackSrc;
-          this.classList.add('img-loaded');
-        }
-      }, { once: true });
-    });
-  }
+        // Fallback for broken image URLs
+        img.addEventListener('error', function() {
+          const modernFallback = 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=1200';
+          if (this.src !== modernFallback) {
+            this.src = modernFallback;
+            this.classList.add('img-loaded');
+          }
+        }, { once: true });
+      });
+    }
 
-  // Global Initializer
-  document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    initDirection();
-    initStickyNavbar();
-    initDesktopDropdown();
-    initMobileMenu();
-    highlightActiveNavLink();
-    initYear();
-    initNewsletter();
-    initScrollReveals();
-    initSubtleParallax();
-    initImageFallbacks();
+    // 11. Hero Image Showcase & Interactive Flavor Switcher
+    function initHeroImageShowcase() {
+      const heroImg = document.getElementById('heroFeatureImg');
+      const heroCaption = document.getElementById('heroImageCaption');
+      const thumbBtns = document.querySelectorAll('.hero-thumb-btn');
+
+      if (!heroImg || !thumbBtns.length) return;
+
+      thumbBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const newSrc = btn.getAttribute('data-hero-img');
+          const newCaption = btn.getAttribute('data-hero-caption');
+          const newAlt = btn.getAttribute('data-hero-alt');
+
+          if (!newSrc) return;
+
+          // Update active state on buttons
+          thumbBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Smooth cross-fade transition
+          heroImg.style.opacity = '0.15';
+          heroImg.style.transform = 'scale(0.97)';
+
+          const temp = new Image();
+          temp.onload = () => {
+            heroImg.src = newSrc;
+            if (newAlt) heroImg.alt = newAlt;
+            if (heroCaption && newCaption) heroCaption.textContent = newCaption;
+
+            heroImg.style.opacity = '1';
+            heroImg.style.transform = 'scale(1)';
+          };
+          temp.onerror = () => {
+            heroImg.style.opacity = '1';
+            heroImg.style.transform = 'scale(1)';
+          };
+          temp.src = newSrc;
+        });
+      });
+    }
+
+    // 12. Enforce strict lowercase on all email fields: uppercase letters are NOT accepted
+    function enforceLowercaseEmailInputs() {
+      document.querySelectorAll('input[type="email"]').forEach(input => {
+        input.setAttribute('autocapitalize', 'none');
+        input.setAttribute('spellcheck', 'false');
+        input.setAttribute('pattern', '[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$');
+
+        input.addEventListener('input', () => {
+          if (/[A-Z]/.test(input.value)) {
+            const start = input.selectionStart;
+            const end = input.selectionEnd;
+            input.value = input.value.toLowerCase();
+            if (start !== null && end !== null) {
+              input.setSelectionRange(start, end);
+            }
+          }
+        });
+      });
+    }
+
+    // Global Initializer
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initDirection();
+      initStickyNavbar();
+      initDesktopDropdown();
+      initMobileMenu();
+      highlightActiveNavLink();
+      initYear();
+      initNewsletter();
+      initScrollReveals();
+      initSubtleParallax();
+      initImageFallbacks();
+      initHeroImageShowcase();
+      enforceLowercaseEmailInputs();
 
     // Bind theme buttons
     const themeButtons = document.querySelectorAll('.theme-toggle-btn');

@@ -77,7 +77,7 @@
   </script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/custom.css?v=2.2">
 </head>
 <body class="bg-[#FDFBF7] dark:bg-[#0F1613] text-[#3A3028] dark:text-[#FFF8ED] transition-colors duration-300">
 
@@ -216,18 +216,19 @@
     <div class="ambient-glow-green bottom-10 right-0"></div>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
         
         <!-- Left Column: Copy & CTAs with Cinematic Staggered Entrance -->
         <div class="lg:col-span-7 space-y-6">
           <!-- Quality Pill Badges with Balanced Letter Spacing -->
           <div class="section-eyebrow hero-eyebrow-enter">
-            <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-500 animate-ping shrink-0"></span>
+            <span class="relative flex h-2 w-2 shrink-0 items-center justify-center">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600 dark:bg-emerald-400"></span>
+            </span>
             <span class="whitespace-nowrap">100% Raw &amp; Living Culture</span>
-            <span class="hidden sm:inline text-stone-500 dark:text-stone-400">•</span>
-            <span class="hidden sm:inline whitespace-nowrap">Oak Barrel Aged 21 Days</span>
-            <span class="hidden md:inline text-stone-500 dark:text-stone-400">•</span>
-            <span class="hidden md:inline whitespace-nowrap">&lt;0.5% ABV</span>
+            <span class="text-stone-400 dark:text-stone-500">&bull;</span>
+            <span class="whitespace-nowrap">Oak Barrel Aged 21 Days</span>
           </div>
 
           <!-- Fluid H1: 56–72px desktop, 36–44px mobile -->
@@ -259,7 +260,7 @@
           </div>
 
           <!-- Buttons: Primary Forest Green + Secondary Warm Orange -->
-          <div class="flex flex-wrap items-center gap-4 pt-2 hero-cta-enter">
+          <div class="cta-button-group hero-cta-enter pt-2">
             <a href="products.html" class="btn-primary-forest text-decoration-none">
               <span>Explore The Lineup</span>
               <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -280,19 +281,24 @@
 
         <!-- Right Column: Visual Bottle Composition & Card -->
         <div class="lg:col-span-5 relative hero-card-enter">
-          <div class="relative mx-auto max-w-md">
+          <div class="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none">
             
-            <!-- Glow backdrop circle -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-[#F4A261]/25 to-[#234E3D]/20 rounded-full filter blur-3xl transform scale-90"></div>
+            <!-- Atmospheric glow backdrops -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-[#F4A261]/35 via-[#E76F51]/20 to-[#234E3D]/30 rounded-[2.5rem] filter blur-2xl transform scale-95 opacity-80 pointer-events-none"></div>
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-[#F4A261]/25 rounded-full filter blur-3xl pointer-events-none animate-pulse"></div>
 
-            <!-- Main Feature Image with Glass Frame & Subtle Parallax Response -->
-            <div class="relative rounded-3xl overflow-hidden border border-white/20 dark:border-stone-700/60 shadow-2xl bg-white/40 dark:bg-stone-800/40 backdrop-blur-xl p-3 img-zoom-container">
-              <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=1200" 
-                   alt="Bramble & Oak Craft Kombucha Pour with Botanicals" 
-                   class="w-full h-[460px] object-cover rounded-2xl hover-scale hero-parallax-img"
-                   data-parallax-speed="0.08"
-                   loading="eager"
-                   fetchpriority="high">
+            <!-- Main Feature Image Glass Card Frame -->
+            <div class="hero-glass-frame img-zoom-container group">
+              <div class="hero-img-viewport relative">
+                <!-- Feature Kombucha Image -->
+                <img id="heroFeatureImg"
+                     src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=1200" 
+                     alt="Bramble & Oak Craft Kombucha Pour with Fresh Botanicals" 
+                     class="hero-showcase-img hero-parallax-img hover-scale"
+                     data-parallax-speed="0.08"
+                     loading="eager"
+                     fetchpriority="high">
+              </div>
             </div>
 
           </div>
@@ -308,7 +314,7 @@
        H3: 24–30px desktop, 22–26px mobile
        ========================================================================== -->
   <section class="py-24 relative bg-[#F9F5EC]/60 dark:bg-[#111714]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
       
       <!-- Section Header -->
       <div class="max-w-2xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
@@ -329,8 +335,8 @@
         <!-- Product 1: Yuzu Ginger Zing -->
         <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="50">
           <div>
-            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-[#F4A261]/10 to-transparent p-4 flex items-center justify-center img-zoom-container">
-              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#F4A261] text-[#3A3028] shadow-sm">
+            <div class="relative overflow-hidden h-56 sm:h-60 bg-gradient-to-b from-[#F4A261]/10 to-transparent p-3 sm:p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#F4A261] text-[#3A3028] shadow-sm">
                 Flagship Pour
               </span>
               <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=800" 
@@ -339,39 +345,37 @@
                    class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
             </div>
 
-            <div class="p-5 space-y-3">
-              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
-                <span class="font-semibold text-warm-orange">5.4 Billion CFUs</span>
-                <span>0.4% ABV • 3.2 pH</span>
+            <div class="p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+              <div class="flex items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-1">
+                <span class="font-semibold text-warm-orange whitespace-nowrap">5.4B CFUs</span>
+                <span class="whitespace-nowrap font-medium text-stone-500 dark:text-stone-400">0.4% ABV • 3.2 pH</span>
               </div>
-              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+              <h3 class="featured-card-title text-stone-900 dark:text-white group-hover:text-warm-orange transition">
                 Yuzu Ginger Zing
               </h3>
-              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+              <p class="product-card-tagline text-xs text-stone-600 dark:text-stone-300 leading-relaxed m-0">
                 Organic Sencha green tea base, cold-pressed Peruvian yellow ginger, and aromatic Japanese yuzu juice.
               </p>
               
               <!-- Tasting notes tags with balanced letter spacing -->
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Spicy Ginger</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Yuzu Zest</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Honey Blossom</span>
+              <div class="product-card-notes flex flex-wrap gap-1.5 pt-0.5 items-center">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Spicy Ginger</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Yuzu Zest</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Honey Blossom</span>
               </div>
             </div>
           </div>
 
-          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
-            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
-              <div class="min-w-0 pr-1">
-                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.00</span>
-                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.00/ea)</span>
-                </div>
-              </div>
+          <div class="product-card-footer p-4 pt-3 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto space-y-2.5">
+            <div class="flex items-baseline justify-between text-[11px] text-stone-600 dark:text-stone-400 font-medium">
+              <span>4-Pack (12oz Cans)</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400">($4.00/ea)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.00</span>
               <button type="button" 
                 onclick="window.handleCardAddToCart(this, 'yuzu-ginger-zing', 'fourPack', 1)" 
-                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                class="btn-card-add px-3.5 py-1.5 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" 
                 aria-label="Add Yuzu Ginger Zing to cart">
                 <i class="fa-solid fa-plus text-[10px]"></i>
                 <span class="whitespace-nowrap">Add to Cart</span>
@@ -383,8 +387,8 @@
         <!-- Product 2: Hibiscus Rose Hip -->
         <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-rose-500/10 to-transparent p-4 flex items-center justify-center img-zoom-container">
-              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-rose-600 text-white shadow-sm">
+            <div class="relative overflow-hidden h-56 sm:h-60 bg-gradient-to-b from-rose-500/10 to-transparent p-3 sm:p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-rose-600 text-white shadow-sm">
                 Crowd Favorite
               </span>
               <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=800" 
@@ -393,38 +397,36 @@
                    class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
             </div>
 
-            <div class="p-5 space-y-3">
-              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
-                <span class="font-semibold text-rose-600 dark:text-rose-400">5.8 Billion CFUs</span>
-                <span>0.3% ABV • 3.1 pH</span>
+            <div class="p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+              <div class="flex items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-1">
+                <span class="font-semibold text-rose-600 dark:text-rose-400 whitespace-nowrap">5.8B CFUs</span>
+                <span class="whitespace-nowrap font-medium text-stone-500 dark:text-stone-400">0.3% ABV • 3.1 pH</span>
               </div>
-              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+              <h3 class="featured-card-title text-stone-900 dark:text-white group-hover:text-warm-orange transition">
                 Hibiscus Rose Hip
               </h3>
-              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+              <p class="product-card-tagline text-xs text-stone-600 dark:text-stone-300 leading-relaxed m-0">
                 Egyptian hibiscus calyces, organic whole rose hips, and crushed wild elderberry puree. Tart and ruby red.
               </p>
               
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Wild Rose</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Elderberry</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Ruby Tart</span>
+              <div class="product-card-notes flex flex-wrap gap-1.5 pt-0.5 items-center">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Wild Rose</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Elderberry</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Ruby Tart</span>
               </div>
             </div>
           </div>
 
-          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
-            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
-              <div class="min-w-0 pr-1">
-                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.00</span>
-                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.00/ea)</span>
-                </div>
-              </div>
+          <div class="product-card-footer p-4 pt-3 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto space-y-2.5">
+            <div class="flex items-baseline justify-between text-[11px] text-stone-600 dark:text-stone-400 font-medium">
+              <span>4-Pack (12oz Cans)</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400">($4.00/ea)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.00</span>
               <button type="button" 
                 onclick="window.handleCardAddToCart(this, 'hibiscus-rose-hip', 'fourPack', 1)" 
-                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                class="btn-card-add px-3.5 py-1.5 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" 
                 aria-label="Add Hibiscus Rose Hip to cart">
                 <i class="fa-solid fa-plus text-[10px]"></i>
                 <span class="whitespace-nowrap">Add to Cart</span>
@@ -436,8 +438,8 @@
         <!-- Product 3: Blood Orange Bergamot -->
         <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="150">
           <div>
-            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-orange-500/10 to-transparent p-4 flex items-center justify-center img-zoom-container">
-              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-orange-600 text-white shadow-sm">
+            <div class="relative overflow-hidden h-56 sm:h-60 bg-gradient-to-b from-orange-500/10 to-transparent p-3 sm:p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-orange-600 text-white shadow-sm">
                 Bestseller
               </span>
               <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&q=80&w=800" 
@@ -446,38 +448,36 @@
                    class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
             </div>
 
-            <div class="p-5 space-y-3">
-              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
-                <span class="font-semibold text-warm-orange">5.4 Billion CFUs</span>
-                <span>0.3% ABV • 3.2 pH</span>
+            <div class="p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+              <div class="flex items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-1">
+                <span class="font-semibold text-warm-orange whitespace-nowrap">5.4B CFUs</span>
+                <span class="whitespace-nowrap font-medium text-stone-500 dark:text-stone-400">0.3% ABV • 3.2 pH</span>
               </div>
-              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+              <h3 class="featured-card-title text-stone-900 dark:text-white group-hover:text-warm-orange transition">
                 Blood Orange Bergamot
               </h3>
-              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+              <p class="product-card-tagline text-xs text-stone-600 dark:text-stone-300 leading-relaxed m-0">
                 Cold-fermented with Sicilian blood orange juice, aromatic bergamot peel, wild thyme, and organic black tea.
               </p>
               
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Moro Orange</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Bergamot Peel</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Wild Thyme</span>
+              <div class="product-card-notes flex flex-wrap gap-1.5 pt-0.5 items-center">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Moro Orange</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Bergamot Peel</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Wild Thyme</span>
               </div>
             </div>
           </div>
 
-          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
-            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
-              <div class="min-w-0 pr-1">
-                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.50</span>
-                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.12/ea)</span>
-                </div>
-              </div>
+          <div class="product-card-footer p-4 pt-3 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto space-y-2.5">
+            <div class="flex items-baseline justify-between text-[11px] text-stone-600 dark:text-stone-400 font-medium">
+              <span>4-Pack (12oz Cans)</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400">($4.12/ea)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$16.50</span>
               <button type="button" 
                 onclick="window.handleCardAddToCart(this, 'blood-orange-bergamot', 'fourPack', 1)" 
-                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                class="btn-card-add px-3.5 py-1.5 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" 
                 aria-label="Add Blood Orange Bergamot to cart">
                 <i class="fa-solid fa-plus text-[10px]"></i>
                 <span class="whitespace-nowrap">Add to Cart</span>
@@ -489,8 +489,8 @@
         <!-- Product 4: Wild Blackberry Bramble -->
         <div class="glass-card flex flex-col justify-between overflow-hidden group hover-lift fade-up-scroll h-full" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <div class="relative overflow-hidden h-60 bg-gradient-to-b from-[#234E3D]/15 to-transparent p-4 flex items-center justify-center img-zoom-container">
-              <span class="absolute top-4 left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#234E3D] text-[#FFF8ED] shadow-sm">
+            <div class="relative overflow-hidden h-56 sm:h-60 bg-gradient-to-b from-[#234E3D]/15 to-transparent p-3 sm:p-4 flex items-center justify-center img-zoom-container">
+              <span class="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#234E3D] text-[#FFF8ED] shadow-sm">
                 House Signature
               </span>
               <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&q=80&w=800" 
@@ -499,38 +499,36 @@
                    class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500">
             </div>
 
-            <div class="p-5 space-y-3">
-              <div class="flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
-                <span class="font-semibold text-warm-orange">5.8 Billion CFUs</span>
-                <span>0.4% ABV • 3.3 pH</span>
+            <div class="p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+              <div class="flex items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-1">
+                <span class="font-semibold text-warm-orange whitespace-nowrap">5.8B CFUs</span>
+                <span class="whitespace-nowrap font-medium text-stone-500 dark:text-stone-400">0.4% ABV • 3.3 pH</span>
               </div>
-              <h3 class="text-h3 font-heading font-bold text-stone-900 dark:text-white group-hover:text-warm-orange transition">
+              <h3 class="featured-card-title text-stone-900 dark:text-white group-hover:text-warm-orange transition">
                 Wild Blackberry Bramble
               </h3>
-              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 leading-relaxed">
+              <p class="product-card-tagline text-xs text-stone-600 dark:text-stone-300 leading-relaxed m-0">
                 Hand-harvested Oregon wild blackberries, crushed elderberries, organic Darjeeling tea, and Madagascar vanilla bean.
               </p>
               
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Wild Blackberry</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Black Currant</span>
-                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300">Elderberry</span>
+              <div class="product-card-notes flex flex-wrap gap-1.5 pt-0.5 items-center">
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Wild Blackberry</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Black Currant</span>
+                <span class="px-2 py-0.5 rounded-md bg-stone-200/70 dark:bg-stone-800 text-[10px] font-semibold text-stone-700 dark:text-stone-300 whitespace-nowrap">Elderberry</span>
               </div>
             </div>
           </div>
 
-          <div class="p-4 sm:p-5 pt-0 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto">
-            <div class="flex items-center justify-between py-3 gap-2 min-h-[58px]">
-              <div class="min-w-0 pr-1">
-                <span class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 block font-medium truncate">4-Pack (12oz Cans)</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$17.50</span>
-                  <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">($4.38/ea)</span>
-                </div>
-              </div>
+          <div class="product-card-footer p-4 pt-3 border-t border-stone-200/60 dark:border-stone-800/60 mt-auto space-y-2.5">
+            <div class="flex items-baseline justify-between text-[11px] text-stone-600 dark:text-stone-400 font-medium">
+              <span>4-Pack (12oz Cans)</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400">($4.38/ea)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white">$17.50</span>
               <button type="button" 
                 onclick="window.handleCardAddToCart(this, 'wild-blackberry-bramble', 'fourPack', 1)" 
-                class="btn-card-add shrink-0 px-3 py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" 
+                class="btn-card-add px-3.5 py-1.5 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" 
                 aria-label="Add Wild Blackberry Bramble to cart">
                 <i class="fa-solid fa-plus text-[10px]"></i>
                 <span class="whitespace-nowrap">Add to Cart</span>
@@ -556,7 +554,7 @@
        THE FERMENTATION PHILOSOPHY
        ========================================================================== -->
   <section class="py-24 relative overflow-hidden">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
       
       <div class="max-w-3xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
         <span class="section-eyebrow">
@@ -633,7 +631,7 @@
        SOCIAL PROOF / TAPROOM ATMOSPHERE
        ========================================================================== -->
   <section class="py-24 bg-[#F9F5EC]/60 dark:bg-[#111714] relative">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
       
       <div class="max-w-2xl mx-auto text-center space-y-3 mb-16" data-aos="fade-up">
         <span class="section-eyebrow">
@@ -702,16 +700,16 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        GLOBAL COMPREHENSIVE FOOTER
        ========================================================================== -->
   <footer class="site-footer pt-16 pb-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b footer-divider">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 pb-12 border-b footer-divider">
         
-        <!-- Column 1 — Brand (4 cols) -->
-        <div class="lg:col-span-4 space-y-4">
-          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble & Oak Craft Kombucha">
+        <!-- Column 1 - Brand (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-4">
+          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble &amp; Oak Craft Kombucha">
             <div class="brand-logo-icon">
               <i class="fa-solid fa-bottle-droplet text-lg"></i>
             </div>
@@ -740,8 +738,8 @@
           </div>
         </div>
 
-        <!-- Column 2 — Explore Bramble & Oak (2 cols) -->
-        <div class="lg:col-span-2 space-y-3">
+        <!-- Column 2 - Explore Bramble & Oak (2 cols) -->
+        <div class="lg:col-span-2 xl:col-span-2 space-y-3">
           <h4 class="footer-heading text-xs m-0">Explore Bramble &amp; Oak</h4>
           <ul class="space-y-2 text-xs p-0 m-0 list-none">
             <li><a href="index.html" class="footer-link">Our Story &amp; Experience</a></li>
@@ -754,8 +752,8 @@
           </ul>
         </div>
 
-        <!-- Column 3 — Discover Our Craft (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
+        <!-- Column 3 - Discover Our Craft (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-3">
           <h4 class="footer-heading text-xs m-0">Discover Our Craft</h4>
           <ul class="space-y-2 text-xs p-0 m-0 list-none">
             <li><a href="products.html?category=citrus-zest" class="footer-link">Citrus &amp; Zest</a></li>
@@ -770,23 +768,23 @@
               <i class="fa-regular fa-clock text-[10px]"></i>
               <span>Taproom Hours</span>
             </p>
-            <p class="m-0">Wed–Fri: 3PM–10PM</p>
-            <p class="m-0">Sat–Sun: 12PM–11PM</p>
+            <p class="m-0">Wed &ndash; Fri: 3PM &ndash; 10PM</p>
+            <p class="m-0">Sat &ndash; Sun: 12PM &ndash; 11PM</p>
           </div>
         </div>
 
-        <!-- Column 4 — Fermentation Circle (Newsletter) (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
+        <!-- Column 4 - Fermentation Circle (Newsletter) (4 cols) -->
+        <div class="lg:col-span-4 xl:col-span-4 space-y-3">
           <h4 class="footer-heading text-xs m-0">Fermentation Circle</h4>
           <p class="text-xs footer-desc leading-relaxed m-0">
             Join 12,000+ living culture enthusiasts. Get early access to small-batch barrel drops and 15% off your first cold-pack order.
           </p>
 
-          <form class="newsletter-form space-y-2 pt-1">
-            <div class="flex gap-2">
-              <input type="email" placeholder="Your email address" required 
-                class="footer-input flex-1 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
-              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0">
+          <form class="newsletter-form space-y-2 mt-4 pt-1">
+            <div class="flex gap-2 w-full">
+              <input type="email" placeholder="Your email address" required autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
+                class="footer-input flex-1 min-w-0 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
+              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0 whitespace-nowrap">
                 Join
               </button>
             </div>
@@ -802,9 +800,9 @@
           &copy; <span class="current-year">2026</span> Bramble &amp; Oak Craft Kombucha Taproom &amp; Bottling Co. All rights reserved.
         </div>
         <div class="flex flex-wrap items-center justify-center sm:justify-end gap-5">
-          <a href="about.html" class="footer-link">Terms of Fermentation</a>
-          <a href="products.html" class="footer-link">Cold-Chain Guarantee</a>
-          <a href="contact.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Fermentation</a>
+          <a href="guarantee.html" class="footer-link">Cold-Chain Guarantee</a>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -816,7 +814,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/products-data.js"></script>
-  <script src="assets/js/cart.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
 </body>
 </html>

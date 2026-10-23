@@ -76,7 +76,7 @@
   </script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/custom.css?v=2.2">
 </head>
 <body class="bg-[#FDFBF7] dark:bg-[#0F1613] text-[#3A3028] dark:text-[#FFF8ED] transition-colors duration-300">
 
@@ -232,7 +232,7 @@
             Elevate your beverage program with raw, non-alcoholic craft kombucha on tap. We supply Michelin-starred restaurants, specialty coffee bars, luxury hotels, and modern offices with calibrated Sankey D kegs and cold-chain replenishment.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2 hero-cta-enter">
+          <div class="cta-button-group hero-cta-enter pt-2">
             <a href="#tastingFlightBuilder" class="btn-primary-forest text-decoration-none">
               <i class="fa-solid fa-sliders text-xs"></i>
               <span>Build A Custom Tasting Flight</span>
@@ -259,15 +259,24 @@
           </div>
         </div>
 
-        <div class="lg:col-span-5 hero-card-enter">
-          <!-- Commercial Draft Tap Manifold Feature Shot with Smooth Zoom -->
-          <div class="relative rounded-3xl overflow-hidden border border-white/20 dark:border-stone-700/60 shadow-2xl bg-white/40 dark:bg-stone-800/40 p-3 img-zoom-container">
-            <img src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&q=80&w=1200" 
-                 alt="Bramble & Oak Commercial Cold Draft Keg Taps" 
-                 loading="eager"
-                 fetchpriority="high"
-                 class="w-full h-[460px] object-cover rounded-2xl hover-scale hero-parallax-img"
-                 data-parallax-speed="0.08">
+        <div class="lg:col-span-5 relative hero-card-enter">
+          <div class="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none">
+            
+            <!-- Atmospheric glow backdrops -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-[#F4A261]/35 via-[#E76F51]/20 to-[#234E3D]/30 rounded-[2.5rem] filter blur-2xl transform scale-95 opacity-80 pointer-events-none"></div>
+
+            <!-- Commercial Draft Tap Manifold Feature Shot with Smooth Zoom -->
+            <div class="hero-glass-frame img-zoom-container group">
+              <div class="hero-img-viewport relative">
+                <img src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&q=80&w=1200" 
+                     alt="Bramble & Oak Commercial Cold Draft Keg Taps" 
+                     loading="eager"
+                     fetchpriority="high"
+                     class="hero-showcase-img hero-parallax-img hover-scale"
+                     data-parallax-speed="0.08">
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -294,49 +303,58 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         
-        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer" data-aos="fade-up" data-aos-delay="50">
-          <div class="w-12 h-12 rounded-xl bg-[#F4A261]/15 text-warm-orange flex items-center justify-center text-xl icon-blink-container">
+        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer h-full flex flex-col justify-start" data-aos="fade-up" data-aos-delay="50">
+          <div class="w-12 h-12 rounded-xl bg-[#F4A261]/15 text-warm-orange flex items-center justify-center text-xl icon-blink-container shrink-0">
             <i class="fa-solid fa-shield-virus"></i>
           </div>
-          <h3 class="text-h3 font-heading font-bold text-lg text-stone-900 dark:text-white">Keg Stability Guarantee</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-            Our microbiological cellar control halts residual sugar refermentation. 120-day shelf life with pristine bubble pressure and zero runaway alcohol accumulation.
+          <h3 class="font-heading font-bold text-lg text-stone-900 dark:text-white min-h-[3.25rem] flex items-center leading-snug m-0">
+            Keg Stability Guarantee
+          </h3>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed flex-1 m-0">
+            Our microbiological cellar control halts residual sugar refermentation. 120-day shelf life with pristine bubble pressure and zero runaway.
           </p>
         </div>
 
-        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-xl bg-[#234E3D]/15 text-[#234E3D] dark:text-[#F4A261] flex items-center justify-center text-xl icon-blink-container">
+        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer h-full flex flex-col justify-start" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 rounded-xl bg-[#234E3D]/15 text-[#234E3D] dark:text-[#F4A261] flex items-center justify-center text-xl icon-blink-container shrink-0">
             <i class="fa-solid fa-truck-fast"></i>
           </div>
-          <h3 class="text-h3 font-heading font-bold text-lg text-stone-900 dark:text-white">Refrigerated Logistics</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+          <h3 class="font-heading font-bold text-lg text-stone-900 dark:text-white min-h-[3.25rem] flex items-center leading-snug m-0">
+            Refrigerated Logistics
+          </h3>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed flex-1 m-0">
             Direct refrigerated van routes across the Pacific Northwest and cold pallet freight nationwide with integrated live temperature monitoring tags.
           </p>
         </div>
 
-        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer" data-aos="fade-up" data-aos-delay="150">
-          <div class="w-12 h-12 rounded-xl bg-sky-500/15 text-sky-500 flex items-center justify-center text-xl icon-blink-container">
+        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer h-full flex flex-col justify-start" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/15 text-sky-500 flex items-center justify-center text-xl icon-blink-container shrink-0">
             <i class="fa-solid fa-wrench"></i>
           </div>
-          <h3 class="text-h3 font-heading font-bold text-lg text-stone-900 dark:text-white">Draft Line Calibration</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+          <h3 class="font-heading font-bold text-lg text-stone-900 dark:text-white min-h-[3.25rem] flex items-center leading-snug m-0">
+            Draft Line Calibration
+          </h3>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed flex-1 m-0">
             Complimentary line balancing, regulator tuning (10-12 PSI 100% CO2), and quarterly non-caustic line maintenance checks for all local venues.
           </p>
         </div>
 
-        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-xl icon-blink-container">
+        <div class="glass-card p-6 space-y-3 hover-lift group cursor-pointer h-full flex flex-col justify-start" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-xl icon-blink-container shrink-0">
             <i class="fa-solid fa-chart-pie"></i>
           </div>
-          <h3 class="text-h3 font-heading font-bold text-lg text-stone-900 dark:text-white">72%+ Gross Margin</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+          <h3 class="font-heading font-bold text-lg text-stone-900 dark:text-white min-h-[3.25rem] flex items-center leading-snug m-0">
+            72%+ Gross Profit Margin
+          </h3>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed flex-1 m-0">
             Wholesale pricing yields a pour cost under $1.45 per 12oz draft pint at a standard $6-$8 menu price point, significantly exceeding wine margins.
           </p>
         </div>
 
       </div>
+
 
     </div>
   </section>
@@ -515,52 +533,58 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         
-        <div class="glass-card p-8 space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex text-[#F4A261] text-sm gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <div class="glass-card p-7 sm:p-8 hover-lift h-full flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div class="space-y-4">
+            <div class="flex text-[#F4A261] text-sm gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm italic font-heading text-stone-700 dark:text-stone-300 leading-relaxed min-h-[5.5rem] m-0">
+              "Bramble &amp; Oak's Pinot Noir Barrel Reserve  our non-alcoholic pairing menu. Guests often mistake it for a biodynamic vintage. Reliable keg deliveries every Tuesday without fail."
+            </p>
           </div>
-          <p class="text-sm italic font-heading text-stone-700 dark:text-stone-300 leading-relaxed">
-            "Bramble &amp; Oak's Pinot Noir Barrel Reserve completely revolutionized our non-alcoholic pairing menu. Guests often . Reliable keg deliveries every Tuesday without fail."
-          </p>
-          <div class="pt-2 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" alt="Sommelier" class="w-10 h-10 rounded-full object-cover">
-            <div>
+          <div class="mt-6 pt-4 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" alt="Sommelier" class="w-10 h-10 rounded-full object-cover shrink-0 shadow-xs">
+            <div class="min-w-0">
               <h5 class="text-xs font-bold text-stone-900 dark:text-white m-0">Elena Rostova</h5>
-              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-sans">Beverage Director, Timber & Ash (Michelin Guide)</span>
+              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-sans block mt-0.5 leading-snug">Beverage Director, Timber &amp; Ash (Michelin Guide)</span>
             </div>
           </div>
         </div>
 
-        <div class="glass-card p-8 space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex text-[#F4A261] text-sm gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <div class="glass-card p-7 sm:p-8 hover-lift h-full flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+          <div class="space-y-4">
+            <div class="flex text-[#F4A261] text-sm gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm italic font-heading text-stone-700 dark:text-stone-300 leading-relaxed min-h-[5.5rem] m-0">
+              "We run two sixtels on draft alongside our cold  all 6 roastery cafes. The Yuzu Ginger Zing is our highest grossing afternoon item by volume. The line support team is world-class."
+            </p>
           </div>
-          <p class="text-sm italic font-heading text-stone-700 dark:text-stone-300 leading-relaxed">
-            "We run two sixtels on draft alongside our cold brew taps across all 6 roastery cafes. The Yuzu Ginger Zing is our highest grossing afternoon item by volume. The line support team is world-class."
-          </p>
-          <div class="pt-2 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200" alt="Cafe Founder" class="w-10 h-10 rounded-full object-cover">
-            <div>
+          <div class="mt-6 pt-4 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200" alt="Cafe Founder" class="w-10 h-10 rounded-full object-cover shrink-0 shadow-xs">
+            <div class="min-w-0">
               <h5 class="text-xs font-bold text-stone-900 dark:text-white m-0">Marcus Vance</h5>
-              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-sans">Founder, Rogue Wave Coffee Collective</span>
+              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-sans block mt-0.5 leading-snug">Founder, Rogue Wave Coffee Collective</span>
             </div>
           </div>
         </div>
 
-        <div class="glass-card p-8 space-y-4 hover-lift" data-aos="fade-up" data-aos-delay="300">
-          <div class="flex text-[#F4A261] text-sm gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <div class="glass-card p-7 sm:p-8 hover-lift h-full flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+          <div class="space-y-4">
+            <div class="flex text-[#F4A261] text-sm gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm italic font-heading text-stone-700 dark:text-stone-300 leading-relaxed min-h-[5.5rem] m-0">
+              "Hotel guests constantly rave about the lavender kombucha in our executive suites and pool bar. It gives wellness travelers a sophisticated zero-proof cocktail alternative."
+            </p>
           </div>
-          <p class="text-sm italic font-heading text-stone-700 dark:text-stone-300 leading-relaxed">
-            "Hotel guests constantly rave about the lavender kombucha in our executive suites and pool bar. It gives wellness travelers a sophisticated zero-proof cocktail alternative."
-          </p>
-          <div class="pt-2 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="GM" class="w-10 h-10 rounded-full object-cover">
-            <div>
+          <div class="mt-6 pt-4 border-t border-stone-200 dark:border-stone-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="GM" class="w-10 h-10 rounded-full object-cover shrink-0 shadow-xs">
+            <div class="min-w-0">
               <h5 class="text-xs font-bold text-stone-900 dark:text-white m-0">Camille Laurent</h5>
-              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-sans">General Manager, The Verdant Hotel & Spa</span>
+              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-sans block mt-0.5 leading-snug">General Manager, The Verdant Hotel &amp; Spa</span>
             </div>
           </div>
         </div>
@@ -656,7 +680,7 @@
               <label for="b2bEmail" class="block text-xs font-semibold mb-1 text-stone-600 dark:text-stone-300">
                 Business Email <span class="text-warm-orange">*</span>
               </label>
-              <input type="email" id="b2bEmail" name="email" placeholder="david@cascadebrasserie.com" 
+              <input type="email" id="b2bEmail" name="email" placeholder="david@cascadebrasserie.com" autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
                 class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-white focus:outline-none focus:border-[#F4A261] transition">
               <span id="b2bEmailError" class="form-error-msg hidden">Please enter a valid business email address.</span>
             </div>
@@ -713,13 +737,16 @@
   <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
+    <!-- ==========================================================================
+       GLOBAL COMPREHENSIVE FOOTER
+       ========================================================================== -->
   <footer class="site-footer pt-16 pb-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b footer-divider">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 pb-12 border-b footer-divider">
         
-        <!-- Column 1 — Brand (4 cols) -->
-        <div class="lg:col-span-4 space-y-4">
-          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble & Oak Craft Kombucha">
+        <!-- Column 1 - Brand (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-4">
+          <a href="index.html" class="brand-logo flex items-center gap-3 group text-decoration-none m-0" aria-label="Bramble &amp; Oak Craft Kombucha">
             <div class="brand-logo-icon">
               <i class="fa-solid fa-bottle-droplet text-lg"></i>
             </div>
@@ -748,8 +775,8 @@
           </div>
         </div>
 
-        <!-- Column 2 — Explore Bramble & Oak (2 cols) -->
-        <div class="lg:col-span-2 space-y-3">
+        <!-- Column 2 - Explore Bramble & Oak (2 cols) -->
+        <div class="lg:col-span-2 xl:col-span-2 space-y-3">
           <h4 class="footer-heading text-xs m-0">Explore Bramble &amp; Oak</h4>
           <ul class="space-y-2 text-xs p-0 m-0 list-none">
             <li><a href="index.html" class="footer-link">Our Story &amp; Experience</a></li>
@@ -762,8 +789,8 @@
           </ul>
         </div>
 
-        <!-- Column 3 — Discover Our Craft (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
+        <!-- Column 3 - Discover Our Craft (3 cols) -->
+        <div class="lg:col-span-3 xl:col-span-3 space-y-3">
           <h4 class="footer-heading text-xs m-0">Discover Our Craft</h4>
           <ul class="space-y-2 text-xs p-0 m-0 list-none">
             <li><a href="products.html?category=citrus-zest" class="footer-link">Citrus &amp; Zest</a></li>
@@ -778,23 +805,23 @@
               <i class="fa-regular fa-clock text-[10px]"></i>
               <span>Taproom Hours</span>
             </p>
-            <p class="m-0">Wed–Fri: 3PM–10PM</p>
-            <p class="m-0">Sat–Sun: 12PM–11PM</p>
+            <p class="m-0">Wed &ndash; Fri: 3PM &ndash; 10PM</p>
+            <p class="m-0">Sat &ndash; Sun: 12PM &ndash; 11PM</p>
           </div>
         </div>
 
-        <!-- Column 4 — Fermentation Circle (Newsletter) (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
+        <!-- Column 4 - Fermentation Circle (Newsletter) (4 cols) -->
+        <div class="lg:col-span-4 xl:col-span-4 space-y-3">
           <h4 class="footer-heading text-xs m-0">Fermentation Circle</h4>
           <p class="text-xs footer-desc leading-relaxed m-0">
             Join 12,000+ living culture enthusiasts. Get early access to small-batch barrel drops and 15% off your first cold-pack order.
           </p>
 
-          <form class="newsletter-form space-y-2 pt-1">
-            <div class="flex gap-2">
-              <input type="email" placeholder="Your email address" required 
-                class="footer-input flex-1 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
-              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0">
+          <form class="newsletter-form space-y-2 mt-4 pt-1">
+            <div class="flex gap-2 w-full">
+              <input type="email" placeholder="Your email address" required autocapitalize="none" spellcheck="false" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
+                class="footer-input flex-1 min-w-0 px-3 py-2 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F4A261]">
+              <button type="submit" class="btn-secondary-orange px-3.5 py-2 text-xs font-semibold rounded-xl flex-shrink-0 whitespace-nowrap">
                 Join
               </button>
             </div>
@@ -810,9 +837,9 @@
           &copy; <span class="current-year">2026</span> Bramble &amp; Oak Craft Kombucha Taproom &amp; Bottling Co. All rights reserved.
         </div>
         <div class="flex flex-wrap items-center justify-center sm:justify-end gap-5">
-          <a href="about.html" class="footer-link">Terms of Fermentation</a>
-          <a href="products.html" class="footer-link">Cold-Chain Guarantee</a>
-          <a href="contact.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Fermentation</a>
+          <a href="guarantee.html" class="footer-link">Cold-Chain Guarantee</a>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -822,8 +849,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/products-data.js"></script>
-  <script src="assets/js/cart.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
 
   <!-- Interactive Flight Builder Script -->
   <script>

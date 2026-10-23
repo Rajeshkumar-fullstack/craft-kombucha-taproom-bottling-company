@@ -64,12 +64,14 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--navbar-height, 64px) + 24px);
 }
 
 /* Dark Mode Tokens */
 html.dark {
+  color-scheme: dark;
   --bg-primary: #0F1613; /* Deep cellar forest-charcoal */
   --bg-surface: #17211C;
   --bg-surface-elevated: #1F2C26;
@@ -476,15 +478,15 @@ html.dark .text-dark-brown,
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.35rem 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.425rem 1.125rem !important;
   border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.95);
   color: #9A3412;
   border: 1px solid rgba(154, 52, 18, 0.32);
   margin-bottom: 0.75rem;
@@ -492,15 +494,63 @@ html.dark .text-dark-brown,
   max-width: 100%;
   box-sizing: border-box;
   white-space: nowrap;
+  line-height: 1.25;
 }
 
-@media (max-width: 640px) {
+.hero-eyebrow-enter.section-eyebrow,
+.section-eyebrow.hero-eyebrow-enter {
+  padding: 0.425rem 1.125rem !important;
+  gap: 0.55rem;
+  box-sizing: border-box;
+  white-space: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Specific 1024px tablet/laptop breakpoint calibration */
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .section-eyebrow.hero-eyebrow-enter,
+  .hero-eyebrow-enter.section-eyebrow {
+    font-size: 0.7125rem !important;
+    letter-spacing: 0.04em !important;
+    padding: 0.375rem 1rem !important;
+    gap: 0.45rem !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* Tablet view (640px to 1023px) - single column, generous room */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .section-eyebrow.hero-eyebrow-enter,
+  .hero-eyebrow-enter.section-eyebrow {
+    font-size: 0.6875rem !important;
+    letter-spacing: 0.035em !important;
+    padding: 0.35rem 0.95rem !important;
+    gap: 0.4rem !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (max-width: 639.98px) {
   .section-eyebrow {
     font-size: 0.6875rem;
-    padding: 0.28rem 0.65rem;
-    letter-spacing: 0.05em;
+    padding: 0.325rem 0.85rem !important;
+    letter-spacing: 0.04em;
     gap: 0.35rem;
     max-width: 100%;
+  }
+  .hero-eyebrow-enter.section-eyebrow,
+  .section-eyebrow.hero-eyebrow-enter {
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+    border-radius: 9999px !important;
+    padding: 0.35rem 0.85rem !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.03em !important;
+    gap: 0.35rem !important;
+    line-height: 1.25 !important;
   }
 }
 
@@ -706,6 +756,104 @@ html.dark .hero-text-highlight {
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   UNIFIED SINGLE-LINE CTA BUTTON GROUPS (ACROSS ALL PAGES & VIEWPORTS)
+   Ensures primary & secondary action buttons stay side-by-side in one line
+   with balanced widths, synchronized heights, and crisp responsive typography.
+   ========================================================================== */
+
+.hero-cta-enter,
+.cta-button-group {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 0.625rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure child CTA buttons share the row equally and maintain perfect horizontal alignment */
+.hero-cta-enter > a,
+.hero-cta-enter > button,
+.cta-button-group > a,
+.cta-button-group > button {
+  flex: 1 1 50% !important;
+  min-width: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Mobile & Small Screens (< 640px): Compact padding, responsive fonts, aligned on same line */
+@media (max-width: 639.98px) {
+  .hero-cta-enter,
+  .cta-button-group {
+    gap: 0.5rem !important;
+  }
+
+  .hero-cta-enter > a,
+  .hero-cta-enter > button,
+  .cta-button-group > a,
+  .cta-button-group > button {
+    padding: 0.65rem 0.5rem !important;
+    font-size: 0.75rem !important; /* 12px for crisp readability without overflowing */
+    line-height: 1.25 !important;
+    border-radius: 0.85rem !important;
+    min-height: 2.85rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  .hero-cta-enter > a i,
+  .hero-cta-enter > button i,
+  .cta-button-group > a i,
+  .cta-button-group > button i {
+    font-size: 0.75rem !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Extra small mobile (e.g. 320px) safety */
+@media (max-width: 340px) {
+  .hero-cta-enter,
+  .cta-button-group {
+    gap: 0.35rem !important;
+  }
+  .hero-cta-enter > a,
+  .hero-cta-enter > button,
+  .cta-button-group > a,
+  .cta-button-group > button {
+    padding: 0.55rem 0.35rem !important;
+    font-size: 0.6875rem !important; /* 11px */
+  }
+}
+
+/* Tablet & Desktop (>= 640px): Standard sizing, strictly on one row */
+@media (min-width: 640px) {
+  .hero-cta-enter,
+  .cta-button-group {
+    width: auto !important;
+    display: inline-flex !important;
+    gap: 1rem !important;
+  }
+
+  .hero-cta-enter > a,
+  .hero-cta-enter > button,
+  .cta-button-group > a,
+  .cta-button-group > button {
+    flex: 0 0 auto !important;
+    padding: 0.85rem 1.75rem !important;
+    font-size: 0.9375rem !important;
+    white-space: nowrap !important;
+    min-height: 3.125rem !important;
+  }
+}
+
 /* Accessible Focus States */
 button:focus-visible,
 a:focus-visible,
@@ -714,6 +862,56 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--color-warm-orange) !important;
   outline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   DATE & CALENDAR PICKER ACCESSIBILITY & HIGH-CONTRAST SYSTEM
+   Solves dark-mode contrast issue for native date inputs & calendar picker icons
+   ========================================================================== */
+
+input[type="date"] {
+  color-scheme: light;
+  position: relative;
+}
+
+html.dark input[type="date"],
+.dark input[type="date"] {
+  color-scheme: dark !important;
+}
+
+/* WebKit / Chromium native calendar picker indicator styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px;
+  transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+  opacity: 0.85;
+}
+
+/* Light mode: high-contrast dark bronze/forest green tint */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.18) sepia(0.6) saturate(3) hue-rotate(110deg) brightness(0.7);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.55) sepia(1) saturate(5) hue-rotate(350deg) brightness(1.1);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Dark mode: vibrant warm-amber glow with high contrast against dark cellar surfaces */
+html.dark input[type="date"]::-webkit-calendar-picker-indicator,
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.88) sepia(0.35) saturate(4) hue-rotate(345deg) brightness(1.3) drop-shadow(0 0 2px rgba(244, 162, 97, 0.45)) !important;
+  opacity: 1 !important;
+  background-color: rgba(244, 162, 97, 0.15) !important;
+}
+
+html.dark input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.dark input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.72) sepia(1) saturate(6) hue-rotate(350deg) brightness(1.25) drop-shadow(0 0 4px rgba(244, 162, 97, 0.8)) !important;
+  background-color: rgba(244, 162, 97, 0.28) !important;
+  transform: scale(1.15);
 }
 
 /* ==========================================================================
@@ -812,30 +1010,35 @@ textarea:focus-visible {
   pointer-events: none;
 }
 
-.hero-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transform: scale(1.05);
-  filter: brightness(0.95) contrast(1.05);
+.hero-bg-img,
+.hero-bg-layer img,
+img.hero-bg-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  transform: scale(1.03);
+  filter: brightness(0.92) contrast(1.08) !important;
   animation: heroSubtleFloat 28s ease-in-out infinite alternate;
   will-change: transform;
 }
 
 @keyframes heroSubtleFloat {
   0% {
-    transform: scale(1.04) translate(0, 0);
+    transform: scale(1.03) translate(0, 0);
   }
   50% {
-    transform: scale(1.08) translate(-1%, -0.8%);
+    transform: scale(1.06) translate(-0.8%, -0.5%);
   }
   100% {
-    transform: scale(1.05) translate(0.8%, 0.5%);
+    transform: scale(1.04) translate(0.6%, 0.4%);
   }
 }
 
-/* Light mode overlay: warm artisanal wash preserving crisp typography */
+/* Light mode overlay: transparent atmospheric tint preserving full image visibility and typography readability */
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
@@ -843,13 +1046,12 @@ textarea:focus-visible {
   height: 100%;
   background: 
     linear-gradient(to right, 
-      rgba(253, 251, 247, 0.98) 0%, 
-      rgba(253, 251, 247, 0.94) 45%, 
-      rgba(253, 251, 247, 0.82) 75%,
-      rgba(253, 251, 247, 0.70) 100%),
-    radial-gradient(circle at 85% 25%, rgba(180, 83, 9, 0.06) 0%, transparent 55%);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+      rgba(253, 251, 247, 0.78) 0%, 
+      rgba(253, 251, 247, 0.52) 45%, 
+      rgba(253, 251, 247, 0.25) 75%,
+      rgba(253, 251, 247, 0.12) 100%),
+    radial-gradient(circle at 85% 25%, rgba(180, 83, 9, 0.08) 0%, transparent 60%);
+  pointer-events: none;
   transition: background 0.35s ease;
 }
 
@@ -857,30 +1059,31 @@ textarea:focus-visible {
   .hero-bg-overlay {
     background: 
       linear-gradient(to bottom, 
-        rgba(253, 251, 247, 0.97) 0%, 
-        rgba(253, 251, 247, 0.92) 55%, 
-        rgba(253, 251, 247, 0.80) 100%);
+        rgba(253, 251, 247, 0.78) 0%, 
+        rgba(253, 251, 247, 0.50) 50%, 
+        rgba(253, 251, 247, 0.25) 100%);
   }
 }
 
-/* Dark mode overlay: rich cellar forest-charcoal vignette */
-html.dark .hero-bg-overlay {
+/* Dark mode overlay: rich transparent cellar vignette keeping photography vibrant */
+html.dark .hero-bg-overlay,
+.dark .hero-bg-overlay {
   background: 
     linear-gradient(135deg, 
-      rgba(15, 22, 19, 0.92) 0%, 
-      rgba(15, 22, 19, 0.80) 48%, 
-      rgba(15, 22, 19, 0.95) 100%),
-    radial-gradient(circle at 75% 25%, rgba(244, 162, 97, 0.12) 0%, transparent 55%),
-    radial-gradient(circle at 20% 80%, rgba(35, 78, 61, 0.25) 0%, transparent 65%);
+      rgba(15, 22, 19, 0.72) 0%, 
+      rgba(15, 22, 19, 0.45) 48%, 
+      rgba(15, 22, 19, 0.58) 100%),
+    radial-gradient(circle at 75% 25%, rgba(244, 162, 97, 0.16) 0%, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(35, 78, 61, 0.22) 0%, transparent 65%);
 }
 
-/* Bottom gradient fade: melts smoothly into the subsequent page section */
+/* Bottom gradient fade: melts smoothly into the subsequent page section without cutting off the image */
 .hero-bg-gradient-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 130px;
+  height: 85px;
   background: linear-gradient(to bottom, rgba(253, 251, 247, 0) 0%, var(--bg-primary) 100%);
   pointer-events: none;
   transition: background 0.35s ease;
@@ -1939,8 +2142,16 @@ html.dark .product-card-media {
   color: var(--footer-heading);
   font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.25rem !important;
+  display: block;
+  white-space: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   transition: color 0.3s ease;
 }
 
@@ -1948,6 +2159,33 @@ html.dark .product-card-media {
   color: var(--footer-text-muted);
   line-height: 1.65;
   transition: color 0.3s ease;
+}
+
+.site-footer ul {
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  list-style: none !important;
+}
+
+.site-footer ul li {
+  margin-bottom: 0.65rem;
+  line-height: 1.4;
+}
+
+.site-footer ul li:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer .newsletter-form {
+  margin-top: 1.25rem !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+.site-footer .newsletter-form .flex {
+  width: 100%;
+  min-width: 0;
 }
 
 .footer-link {
@@ -1967,7 +2205,33 @@ html.dark .product-card-media {
   background-color: var(--footer-input-bg);
   border: 1px solid var(--footer-input-border);
   color: var(--footer-input-text);
+  min-width: 0 !important;
+  width: 100%;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.site-footer .newsletter-form button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .site-footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .site-footer .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  .site-footer .footer-heading {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 1rem !important;
+  }
+  .site-footer .grid {
+    column-gap: 1.5rem !important;
+  }
 }
 
 .footer-input:focus {
@@ -2258,6 +2522,112 @@ html.dark .footer-social-btn {
   will-change: transform;
 }
 
+/* ==========================================================================
+   HERO IMAGE SHOWCASE: ATTRACTIVE, FLOATING BADGES & FLUID RESPONSIVE
+   ========================================================================== */
+.hero-glass-frame {
+  position: relative;
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 25px 60px -15px rgba(58, 48, 40, 0.22),
+              0 0 0 1px rgba(244, 162, 97, 0.2),
+              inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  padding: 0.65rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+html.dark .hero-glass-frame {
+  background: rgba(23, 33, 28, 0.8);
+  border-color: rgba(255, 248, 237, 0.14);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8),
+              0 0 0 1px rgba(244, 162, 97, 0.3),
+              inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.hero-img-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+  min-height: 320px;
+  background-color: #17211C;
+}
+
+@media (min-width: 1024px) {
+  .hero-img-viewport {
+    aspect-ratio: 4 / 5;
+    max-height: 540px;
+  }
+}
+
+.hero-showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.35s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.hero-floating-badge {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(58, 48, 40, 0.12);
+  box-shadow: 0 16px 36px -4px rgba(58, 48, 40, 0.2), 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto;
+}
+
+html.dark .hero-floating-badge {
+  background: rgba(23, 33, 28, 0.94);
+  border-color: rgba(255, 248, 237, 0.18);
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-floating-badge:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+@keyframes badgeFloatA {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes badgeFloatB {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(7px); }
+}
+
+.badge-float-top {
+  animation: badgeFloatA 5.5s ease-in-out infinite;
+}
+
+.badge-float-bottom {
+  animation: badgeFloatB 6.5s ease-in-out infinite 0.8s;
+}
+
+.hero-thumb-btn {
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-thumb-btn.active {
+  border-color: #F4A261 !important;
+  background: rgba(244, 162, 97, 0.2) !important;
+  color: #B44C16 !important;
+  box-shadow: 0 2px 8px rgba(244, 162, 97, 0.25);
+}
+
+html.dark .hero-thumb-btn.active {
+  color: #F4A261 !important;
+  border-color: #F4A261 !important;
+}
+
 /* 7. Progressive Smooth Image Fade-In (Zero Layout Shift) */
 img.img-lazy-fade {
   opacity: 0;
@@ -2319,6 +2689,8 @@ img.img-lazy-fade.img-loaded {
   .float-subtle,
   .badge-bounce,
   .badge-glow,
+  .badge-float-top,
+  .badge-float-bottom,
   .probiotic-pulse,
   .icon-blink-container i {
     animation: none !important;
@@ -2437,9 +2809,161 @@ html.dark .form-success-banner,
 }
 
 /* ==========================================================================
-   PRODUCT CARD ACTION BUTTONS
+   PRODUCT CARD ACTION BUTTONS & TYPOGRAPHY ALIGNMENT
    Prevents buttons from overflowing or overlapping price/size labels
    ========================================================================== */
+
+/* Featured Product Card Typography & Complete Horizontal Alignment */
+.featured-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700;
+  height: 2.85rem !important;
+  min-height: 2.85rem !important;
+  max-height: 2.85rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 639.98px) {
+  .featured-card-title {
+    font-size: 1.05rem !important;
+    height: 2.75rem !important;
+    min-height: 2.75rem !important;
+    max-height: 2.75rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .featured-card-title {
+    font-size: 1.175rem !important;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    max-height: 3rem !important;
+  }
+}
+
+/* Taglines: Exactly 2 lines height across all cards */
+.product-card-tagline {
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+  height: 2.35rem !important;
+  min-height: 2.35rem !important;
+  max-height: 2.35rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 639.98px) {
+  .product-card-tagline {
+    font-size: 0.71875rem !important;
+    height: 2.15rem !important;
+    min-height: 2.15rem !important;
+    max-height: 2.15rem !important;
+    line-height: 1.35 !important;
+  }
+}
+
+/* Tasting Notes Tags: Exactly identical 48px height across all cards */
+.product-card-notes {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+  gap: 0.35rem !important;
+  padding-top: 0.25rem !important;
+}
+
+@media (max-width: 639.98px) {
+  .product-card-notes {
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    gap: 0.25rem !important;
+  }
+}
+
+/* Meta Row (CFU & Bottle Size) */
+.product-card-meta-row {
+  height: 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Card Footer (Divider, Switcher, Price, Add to Cart) */
+.product-card-footer {
+  margin-top: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+}
+
+.product-card-price-row {
+  height: 1.75rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  white-space: nowrap !important;
+}
+
+.product-card-price-row .price-val {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+@media (max-width: 639.98px) {
+  .product-card-price-row .price-val {
+    font-size: 1.125rem;
+  }
+}
+
+.product-card-btn-cart {
+  height: 2.625rem !important; /* 42px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Cart Drawer Item Responsive Typography & Spacing */
+.cart-item-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 639.98px) {
+  .cart-item-title {
+    font-size: 0.8125rem;
+  }
+}
+
+.cart-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
 
 .btn-card-add {
   display: inline-flex;
