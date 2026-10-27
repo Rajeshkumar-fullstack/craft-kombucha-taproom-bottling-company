@@ -2146,13 +2146,17 @@ html.dark .product-card-media {
   line-height: 1.4;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 1.25rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.35rem !important;
   display: block;
-  white-space: normal !important;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   transition: color 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .site-footer .footer-heading {
+    white-space: nowrap !important;
+    min-height: 1.25rem;
+  }
 }
 
 .footer-desc {
@@ -2227,7 +2231,8 @@ html.dark .product-card-media {
   .site-footer .footer-heading {
     font-size: 0.75rem !important;
     letter-spacing: 0.05em !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.35rem !important;
+    white-space: nowrap !important;
   }
   .site-footer .grid {
     column-gap: 1.5rem !important;
@@ -2819,12 +2824,10 @@ html.dark .form-success-banner,
   font-size: 1.125rem !important;
   line-height: 1.35 !important;
   font-weight: 700;
-  height: 2.85rem !important;
-  min-height: 2.85rem !important;
-  max-height: 2.85rem !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
+  height: 3.05rem !important;
+  min-height: 3.05rem !important;
+  max-height: 3.05rem !important;
+  display: block !important;
   overflow: hidden !important;
   margin: 0 !important;
 }
@@ -2842,9 +2845,9 @@ html.dark .form-success-banner,
 @media (min-width: 1280px) {
   .featured-card-title {
     font-size: 1.175rem !important;
-    height: 3rem !important;
-    min-height: 3rem !important;
-    max-height: 3rem !important;
+    height: 3.25rem !important;
+    min-height: 3.25rem !important;
+    max-height: 3.25rem !important;
   }
 }
 
@@ -2855,9 +2858,7 @@ html.dark .form-success-banner,
   height: 2.35rem !important;
   min-height: 2.35rem !important;
   max-height: 2.35rem !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
+  display: block !important;
   overflow: hidden !important;
   margin: 0 !important;
 }
@@ -2911,11 +2912,23 @@ html.dark .form-success-banner,
 }
 
 .product-card-price-row {
-  height: 1.75rem !important;
+  height: 1.85rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+  flex-wrap: nowrap !important;
   white-space: nowrap !important;
+  width: 100% !important;
+  gap: 0.5rem !important;
+}
+
+.product-card-price-row > div:first-child {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  gap: 0.35rem !important;
+  min-width: 0 !important;
 }
 
 .product-card-price-row .price-val {
@@ -2923,6 +2936,11 @@ html.dark .form-success-banner,
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
+  white-space: nowrap !important;
+}
+
+.product-card-price-row span {
+  white-space: nowrap !important;
 }
 
 @media (max-width: 639.98px) {
@@ -3442,3 +3460,24 @@ html.dark[dir="rtl"] .rtl-toggle-btn {
     letter-spacing: 0.02em !important;
   }
 }
+
+/* ==========================================================================
+   EQUAL-HEIGHT & VERTICAL BASELINE ALIGNMENT FOR CARDS & PROCESS STEPS
+   ========================================================================== */
+.glass-card.flex.flex-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+}
+
+.glass-card.flex.flex-col > div:first-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.glass-card.flex.flex-col > div:first-child > p {
+  flex-grow: 1;
+}
+
