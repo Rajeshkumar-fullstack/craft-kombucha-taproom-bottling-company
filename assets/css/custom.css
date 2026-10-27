@@ -474,16 +474,22 @@ html.dark .text-dark-brown,
   letter-spacing: -0.01em;
 }
 
-/* Section Eyebrow Label */
-.section-eyebrow {
+/* ==========================================================================
+   ANNOUNCEMENT BADGE & SECTION EYEBROW - RESPONSIVE LAYOUT & OVERFLOW FIX
+   ========================================================================== */
+.section-eyebrow,
+.announcement-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   padding: 0.425rem 1.125rem !important;
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.95);
@@ -491,70 +497,99 @@ html.dark .text-dark-brown,
   border: 1px solid rgba(154, 52, 18, 0.32);
   margin-bottom: 0.75rem;
   box-shadow: 0 1px 3px rgba(58, 48, 40, 0.05);
-  max-width: 100%;
-  box-sizing: border-box;
-  white-space: nowrap;
-  line-height: 1.25;
+  white-space: normal !important;
+  line-height: 1.45;
 }
 
 .hero-eyebrow-enter.section-eyebrow,
-.section-eyebrow.hero-eyebrow-enter {
-  padding: 0.425rem 1.125rem !important;
-  gap: 0.55rem;
+.section-eyebrow.hero-eyebrow-enter,
+.announcement-badge {
   box-sizing: border-box;
-  white-space: nowrap !important;
-  flex-wrap: nowrap !important;
+  max-width: 100%;
+  white-space: normal !important;
 }
 
-/* Specific 1024px tablet/laptop breakpoint calibration */
-@media (min-width: 1024px) and (max-width: 1279.98px) {
-  .section-eyebrow.hero-eyebrow-enter,
-  .hero-eyebrow-enter.section-eyebrow {
+.announcement-badge .announcement-indicator,
+.section-eyebrow .announcement-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  align-self: center;
+}
+
+.section-eyebrow .announcement-text,
+.section-eyebrow .eyebrow-text,
+.announcement-badge .announcement-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+  white-space: normal;
+}
+
+/* Tablet view (640px to 1023.98px) */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .section-eyebrow,
+  .announcement-badge,
+  .hero-eyebrow-enter.section-eyebrow,
+  .section-eyebrow.hero-eyebrow-enter {
     font-size: 0.7125rem !important;
     letter-spacing: 0.04em !important;
     padding: 0.375rem 1rem !important;
     gap: 0.45rem !important;
-    max-width: 100% !important;
-    white-space: nowrap !important;
-    flex-wrap: nowrap !important;
-  }
-}
-
-/* Tablet view (640px to 1023px) - single column, generous room */
-@media (min-width: 640px) and (max-width: 1023.98px) {
-  .section-eyebrow.hero-eyebrow-enter,
-  .hero-eyebrow-enter.section-eyebrow {
-    font-size: 0.6875rem !important;
-    letter-spacing: 0.035em !important;
-    padding: 0.35rem 0.95rem !important;
-    gap: 0.4rem !important;
-    white-space: nowrap !important;
-    flex-wrap: nowrap !important;
-  }
-}
-
-@media (max-width: 639.98px) {
-  .section-eyebrow {
-    font-size: 0.6875rem;
-    padding: 0.325rem 0.85rem !important;
-    letter-spacing: 0.04em;
-    gap: 0.35rem;
     max-width: 100%;
   }
+}
+
+/* Mobile & Narrow view (<= 639.98px) */
+@media (max-width: 639.98px) {
+  .section-eyebrow,
+  .announcement-badge,
   .hero-eyebrow-enter.section-eyebrow,
   .section-eyebrow.hero-eyebrow-enter {
-    white-space: nowrap !important;
-    flex-wrap: nowrap !important;
+    font-size: 0.6875rem !important;
+    padding: 0.375rem 0.85rem !important;
+    letter-spacing: 0.035em !important;
+    gap: 0.45rem !important;
     border-radius: 9999px !important;
-    padding: 0.35rem 0.85rem !important;
-    font-size: 0.65rem !important;
-    letter-spacing: 0.03em !important;
-    gap: 0.35rem !important;
-    line-height: 1.25 !important;
+    width: fit-content;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+  .section-eyebrow .announcement-text,
+  .section-eyebrow .eyebrow-text,
+  .announcement-badge .announcement-text {
+    line-height: 1.4 !important;
+    white-space: normal !important;
   }
 }
 
-html.dark .section-eyebrow {
+/* Extra small mobile (<= 425px) - as specifically requested */
+@media (max-width: 425px) {
+  .section-eyebrow,
+  .announcement-badge,
+  .hero-eyebrow-enter.section-eyebrow,
+  .section-eyebrow.hero-eyebrow-enter {
+    width: 100%;
+    padding: 8px 11px !important;
+    gap: 6px !important;
+    font-size: 11px !important;
+    border-radius: 1.15rem !important;
+  }
+  .section-eyebrow .announcement-text,
+  .section-eyebrow .eyebrow-text,
+  .announcement-badge .announcement-text {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+html.dark .section-eyebrow,
+html.dark .announcement-badge {
   color: var(--color-warm-orange);
   background-color: rgba(244, 162, 97, 0.15);
   border-color: rgba(244, 162, 97, 0.4);
